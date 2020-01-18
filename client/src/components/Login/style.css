@@ -1,0 +1,35 @@
+input {
+    width: 250px;
+    height: 35px;
+    padding: 2px;
+    border: 2px solid black;
+    box-shadow: 3px 3px gray;
+    margin: 5px;
+}
+input:focus {
+    outline-color: orangered;
+}
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+#loginForm * {
+    display: flex;
+    justify-content: center;
+}
+#loginButton {
+    margin: 10px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px 15px 8px 15px;
+}
+#loginButton:hover{
+    color: orangered;
+    background-color: white;
+}
+
+

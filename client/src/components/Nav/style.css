@@ -1,0 +1,35 @@
+a:hover {
+    text-decoration: none;
+    color: orangered;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+nav a {
+    color: white;
+}
+#navItems {
+    display: flex;
+    justify-content: space-evenly;
+}
+#siteTitle {
+    font-size: x-large;
+    color: white;
+}
+#navLogin {
+    margin: 10px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+#navLogin:hover{
+    color: orangered;
+    background-color: white;
+}

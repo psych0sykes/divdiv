@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav";
-import Divs from "./components/Canvas"
+import Divs from "./components/Canvas";
+import Login from "./components/Login";
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
           <Nav/>
           <Divs shimSham="hot damn"></Divs>
+          <Login></Login>
       </div>
     );
   }
