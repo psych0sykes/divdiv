@@ -10,6 +10,6 @@ const divSchema = new Schema({
   message: {type: String}
 });
 
-const Div = mongoose.model("div", divSchema);
+const Div = mongoose.model("Div", divSchema);
 
 module.exports = Div;

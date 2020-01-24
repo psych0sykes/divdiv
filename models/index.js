@@ -1,3 +1,3 @@
 module.exports = {
-  Div: require("./div")
+  Div: require("./Div")
 };

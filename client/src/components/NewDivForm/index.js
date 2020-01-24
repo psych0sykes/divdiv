@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {Row, Container, Col} from "../Grid";
 import {SubmitButton} from "../Form";
+import API from "../../utils/API";
 
 function NewDivForm() {
 
@@ -9,6 +10,20 @@ function NewDivForm() {
     const [color, setColor] = useState("");
     const [canvasId, setCanvasId] = useState("");
     const [message, setMessage] = useState("");
+
+    const handleFormSubmit = event => {
+        event.preventDefault();
+          API.saveDiv({
+            color: color,
+            username: username,
+            donation_amount: donationAmount,
+            canvas_id: canvasId,
+            message: message
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+          });
+      };
+    
 
     return(
         <Container>
@@ -29,7 +44,7 @@ function NewDivForm() {
                     <input value={message} onChange={event => setMessage(event.target.value)} type="text" name="message" placeholder="message"/>
                 </Row>
                 <Row>
-                    <SubmitButton></SubmitButton>
+                    <SubmitButton onClick={handleFormSubmit}></SubmitButton>
                 </Row>
             </form>
                 <Row>
