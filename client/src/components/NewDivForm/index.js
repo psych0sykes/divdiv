@@ -12,22 +12,23 @@ function NewDivForm() {
     const [message, setMessage] = useState("");
 
     const handleFormSubmit = event => {
+        debugger;
         event.preventDefault();
+        console.log("submitting new div");
           API.saveDiv({
             color: color,
             username: username,
             donation_amount: donationAmount,
             canvas_id: canvasId,
-            message: message
+            message: message})
             .then(res => console.log(res))
             .catch(err => console.log(err))
-          });
-      };
+        };
     
 
     return(
         <Container>
-            <form id="newDivForm">
+            <form id="newDivForm" onSubmit={handleFormSubmit}>
                 <Row>
                     <input value={username} onChange={event => setUsername(event.target.value)} type="text" name="username" placeholder="email"/>
                 </Row>
@@ -44,7 +45,7 @@ function NewDivForm() {
                     <input value={message} onChange={event => setMessage(event.target.value)} type="text" name="message" placeholder="message"/>
                 </Row>
                 <Row>
-                    <SubmitButton onClick={handleFormSubmit}></SubmitButton>
+                    <SubmitButton></SubmitButton>
                 </Row>
             </form>
                 <Row>
