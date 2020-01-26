@@ -2,16 +2,23 @@ const db = require("../models");
 
 module.exports = {
         findAll: function(req, res) {
+          console.log(req.params)
+          console.log(db.Div.collection)
         db.Div
-          .find(req.query)
-          .sort({ created: -1 })
-          .then(dbModel => res.json(dbModel))
+          .find({})
+          .then(dbModel => {
+            console.log(dbModel)
+            return res.json(dbModel)
+          })
           .catch(err => res.status(422).json(err));
       },
         newDiv: function(req, res) {
         db.Div
           .create(req.body)
-          .then(dbModel => res.json(dbModel))
+          .then(createdDiv => res.json(createdDiv))
           .catch(err => res.status(422).json(err));
+      },
+        test: function(req, res) {
+        res.json({message: "this is a test and you PASSED!"})
       }
-}
+};

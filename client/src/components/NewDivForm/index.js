@@ -16,7 +16,7 @@ function NewDivForm() {
         event.preventDefault();
         console.log("submitting new div");
           API.saveDiv({
-            color: color,
+            rgb_color: color,
             username: username,
             donation_amount: donationAmount,
             canvas_id: canvasId,

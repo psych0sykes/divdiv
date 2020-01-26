@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
-import NewDivForm from "./components/NewDivForm"
 import Home from "./pages/Home";
 
 
