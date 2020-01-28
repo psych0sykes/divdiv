@@ -3,8 +3,16 @@ import {Row, Container, Col} from "../Grid";
 
 
 function _Div(props) {
+
+    const [divStyle, setDivStyle] = useState(
+        {  
+            width: props.Style.width,
+            height: props.Style.height,
+            backgroundColor: props.RgbColor
+        })
+
     return(
-    <div></div>)
+    <div style={divStyle}></div>)
 };
 
 export default _Div;

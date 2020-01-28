@@ -11,7 +11,7 @@ function Canvas(props) {
 
     function populateCanvas(a){
         return  a.map((newDiv) => 
-        <div key={newDiv._id} rgbcolor={newDiv.rgb_color} style={divStyle}>{newDiv.username}</div>)
+        <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} Style={divStyle}>{newDiv.username}</_Div>)
     };
 
     useEffect(() => {
