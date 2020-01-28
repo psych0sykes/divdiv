@@ -12,7 +12,6 @@ function NewDivForm() {
     const [message, setMessage] = useState("");
 
     const handleFormSubmit = event => {
-        debugger;
         event.preventDefault();
         console.log("submitting new div");
           API.saveDiv({
@@ -48,7 +47,7 @@ function NewDivForm() {
                     <SubmitButton></SubmitButton>
                 </Row>
             </form>
-                <Row>
+                {/* <Row>
                     <div>{username}</div>
                     <br></br>
                     <div>{donationAmount}</div>
@@ -59,7 +58,7 @@ function NewDivForm() {
                     <br></br>
                     <div>{message}</div>
                     <br></br>
-                </Row>
+                </Row> */}
         </Container>
     );
 }

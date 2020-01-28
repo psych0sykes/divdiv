@@ -4,6 +4,9 @@ export default {
   getDivs: function() {
     return axios.get("/api/divs");
   },
+  getCanvasDivs: function(id) {
+    return axios.get("/api/canvas/" + id);
+  },
 
 //   getBook: function(id) {
 //     return axios.get("/api/books/" + id);
