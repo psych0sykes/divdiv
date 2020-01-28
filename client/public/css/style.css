@@ -85,4 +85,8 @@ nav a {
     color: orangered;
     background-color: white;
 }
-
+.canvas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
