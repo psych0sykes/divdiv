@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from "react";
 import {Row, Container, Col} from "../Grid";
 import API from "../../utils/API";
+import _Div from "../_Div";
 
 function Canvas(props) {
 
     const canvasId = props.canvasId;
-    const [canvasDivs, setCanvasDivs] = useState();
+    const [canvasDivs,setCanvasDivs] = useState();
 
-
-    const getCanvasDivs = a => {
-        API.getCanvasDivs(a)
-        .then(res => setCanvasDivs(res.data))
-        .catch(err => console.log(err));
+    function populateCanvas(a){
+        return  a.map((newDiv) => <div key={newDiv._id} >{newDiv.username}</div>)
     };
 
     useEffect(() => {
-        getCanvasDivs(canvasId);
-    } , [] )
+        const fetchData = async () => {
+            const result = await API.getCanvasDivsArray(canvasId).catch(err => console.log(err));
+            console.log(result.data)
+            setCanvasDivs(populateCanvas(result.data));
+        }
+        fetchData();
+      }, []);
+    
 
     return(
-    <div>{props.shimSham}</div>
+    <Container>
+        {canvasDivs}
+    </Container>
     )
 }
 

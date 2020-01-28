@@ -36,8 +36,8 @@ function createDivs(number, campId, canvId, array) {
 
 const divSeed = []
 
-createDivs(100, 69, 69, divSeed);
-createDivs(100, 6969, 6969, divSeed);
+createDivs(100, "69", "69", divSeed);
+createDivs(100, "6969", "6969", divSeed);
 
 db.Div
   .remove({})
