@@ -14,6 +14,7 @@ export default {
 //   },
 
   saveDiv: function(divObj) {
+    console.log(divObj)
     return axios.post("/api/divs", divObj);
   }
 };

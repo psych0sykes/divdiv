@@ -21,7 +21,7 @@ function NewDivForm() {
             donation_amount: donationAmount,
             canvas_id: canvasId,
             message: message})
-            .then(res => console.log(res))
+            .then(res => console.log("who"))
             .catch(err => console.log(err))
         };
     

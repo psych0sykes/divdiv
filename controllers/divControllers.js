@@ -1,5 +1,6 @@
 const db = require("../models");
 
+
 module.exports = {
         findAll: function(req, res) {
           console.log(req.params)
@@ -13,6 +14,8 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
         newDiv: function(req, res) {
+          console.log("adding new div...");
+          console.log(req.body);
         db.Div
           .create(req.body)
           .then(createdDiv => res.json(createdDiv))
