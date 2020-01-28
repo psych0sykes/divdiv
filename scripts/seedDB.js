@@ -8,36 +8,36 @@ mongoose.connect(
   "mongodb://localhost/divdiv"
 );
 
-const divSeed = [
-  {
-    username: "test1",
-    donation_amount: 100,
-    rgb_color: "ff0000",
-    canvas_id: "69",
-    message: "damn"
-  },
-  {
-    username: "test2",
-    donation_amount: 150,
-    rgb_color: "00ff00",
-    canvas_id: "69",
-    message: "wow"
-  },
-  {
-    username: "test3",
-    donation_amount: 50,
-    rgb_color: "0000ff",
-    canvas_id: "69",
-    message: "who?"
-  },
-  {
-    username: "test4",
-    donation_amount: 120,
-    rgb_color: "ffff00",
-    canvas_id: "69",
-    message: "ah"
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
   }
-];
+  return color;
+};
+
+function createDivs(number, campId, canvId, array) {
+
+    for (var i = 0; i < number + 1; i++){
+        let newDiv = {
+          rgb_color: getRandomColor(),
+          username: "test" + i,
+          donation_amount: Math.floor(Math.random() * 100),
+          campaign_name: "Test Campaign",
+          campaign_id: campId,
+          canvas_id: canvId,
+          message: "This is test number: " + i
+        }
+        array.push(newDiv);
+    }
+    return console.log("<===== created " + number + " new divs to canvas " + canvId + " ======>")
+}
+
+const divSeed = []
+
+createDivs(100, 69, 69, divSeed);
+createDivs(100, 6969, 6969, divSeed);
 
 db.Div
   .remove({})

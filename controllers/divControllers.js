@@ -19,6 +19,14 @@ module.exports = {
       },
         findCanvas: function(req, res) {
           console.log(req.params.id);
+        db.Div
+          .find({canvas_id: req.params.id})
+          .then(dbCanvas => {
+            // console.log("canvas: " + dbCanvas)
+            return res.json(dbCanvas)
+          })
+          .catch(err => res.status(422).json(err));
+          
       },
         test: function(req, res) {
         res.json({message: "this is a test and you PASSED!"})
