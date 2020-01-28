@@ -6,10 +6,12 @@ import _Div from "../_Div";
 function Canvas(props) {
 
     const canvasId = props.canvasId;
+    const [divStyle, setDivStyle] = useState({width: "50px", height: "50px", backgroundColor: "gray"});
     const [canvasDivs,setCanvasDivs] = useState();
 
     function populateCanvas(a){
-        return  a.map((newDiv) => <div key={newDiv._id} >{newDiv.username}</div>)
+        return  a.map((newDiv) => 
+        <div key={newDiv._id} rgbcolor={newDiv.rgb_color} style={divStyle}>{newDiv.username}</div>)
     };
 
     useEffect(() => {
