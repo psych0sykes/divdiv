@@ -17,14 +17,14 @@ function getRandomColor() {
   return color;
 };
 
-function createDivs(number, campId, canvId, array) {
+function createDivs(number, campId, canvId, campName, array) {
 
     for (var i = 0; i < number; i++){
         let newDiv = {
           rgb_color: getRandomColor(),
           username: "test" + i,
           donation_amount: Math.floor(Math.random() * 100),
-          campaign_name: "Test Campaign",
+          campaign_name: campName,
           campaign_id: campId,
           canvas_id: canvId,
           message: "This is test number: " + i
@@ -36,9 +36,9 @@ function createDivs(number, campId, canvId, array) {
 
 const divSeed = []
 
-createDivs(1000, "69", "69", divSeed);
-createDivs(2500, "6969", "6969", divSeed);
-createDivs(150, "696969", "696969", divSeed);
+createDivs(333, "69", "69", "333 divs", divSeed);
+createDivs(2500, "6969", "6969", "2500 divs", divSeed);
+createDivs(150, "696969", "696969","150 divs", divSeed);
 
 db.Div
   .remove({})

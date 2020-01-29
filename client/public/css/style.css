@@ -94,9 +94,8 @@ nav a {
 .topCanvas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
+    padding: 10px;
 }
-.topCanvas:first-child {
-    margin: 10px;
-}
+

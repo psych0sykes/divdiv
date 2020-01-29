@@ -13,7 +13,8 @@ function Canvas(props) {
     const styles = {
         width: props.width,
         height: props.height,
-        overflow: "hidden"
+        overflow: "hidden",
+        border: "2px solid black",
     }
 
     function populateCanvas(a){
