@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewDivForm from "../components/NewDivForm";
 import { Col, Row, Container } from "../components/Grid";
 import Canvas from "../components/Canvas";
+import TopCanvas from "../components/TopCanvas"
 
 
 
@@ -11,10 +12,10 @@ class Home extends Component {
         return(
             <Container>
                 <Row>
-                    <NewDivForm/>
+                    <TopCanvas/>
                 </Row>
                 <Row>
-                    <Canvas canvasId="69" width="250px" height="250px"/>
+                    <NewDivForm/>
                 </Row>
             </Container>
         );

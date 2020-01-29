@@ -12,7 +12,8 @@ function Canvas(props) {
 
     const styles = {
         width: props.width,
-        height: props.height
+        height: props.height,
+        overflow: "hidden"
     }
 
     function populateCanvas(a){
@@ -33,11 +34,8 @@ function Canvas(props) {
     
 
     return(
-    <div>
-        <div>
-            {/* <input type="range" min="1" max="100" value="50"></input> */}
-        </div>
-        <div className="canvas" style={styles}>
+    <div style={styles}>
+        <div className="canvas">
             {canvasDivs}
         </div>
     </div>

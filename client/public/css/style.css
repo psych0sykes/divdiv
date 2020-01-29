@@ -91,3 +91,12 @@ nav a {
     justify-content: center;
     overflow: hidden;
 }
+.topCanvas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+.topCanvas:first-child {
+    margin: 10px;
+}
