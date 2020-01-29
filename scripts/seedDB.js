@@ -19,7 +19,7 @@ function getRandomColor() {
 
 function createDivs(number, campId, canvId, array) {
 
-    for (var i = 0; i < number + 1; i++){
+    for (var i = 0; i < number; i++){
         let newDiv = {
           rgb_color: getRandomColor(),
           username: "test" + i,
@@ -36,8 +36,8 @@ function createDivs(number, campId, canvId, array) {
 
 const divSeed = []
 
-createDivs(100, "69", "69", divSeed);
-createDivs(100, "6969", "6969", divSeed);
+createDivs(10000, "69", "69", divSeed);
+createDivs(10000, "6969", "6969", divSeed);
 
 db.Div
   .remove({})

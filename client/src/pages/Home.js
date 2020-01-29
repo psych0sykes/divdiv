@@ -14,7 +14,7 @@ class Home extends Component {
                     <NewDivForm/>
                 </Row>
                 <Row>
-                    <Canvas canvasId="69"/>
+                    <Canvas canvasId="69" width="250px" height="250px"/>
                 </Row>
             </Container>
         );

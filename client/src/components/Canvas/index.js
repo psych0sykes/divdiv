@@ -6,8 +6,14 @@ import _Div from "../_Div";
 function Canvas(props) {
 
     const canvasId = props.canvasId;
-    const [divStyle, setDivStyle] = useState({width: "50px", height: "50px", backgroundColor: "gray"});
+    const [divSize, setDivSize] = useState("10px");
+    const [divStyle, setDivStyle] = useState({width: divSize, height: divSize, backgroundColor: "gray"});
     const [canvasDivs,setCanvasDivs] = useState();
+
+    const styles = {
+        width: props.width,
+        height: props.height
+    }
 
     function populateCanvas(a){
         return  a.map((newDiv) => 
@@ -27,8 +33,13 @@ function Canvas(props) {
     
 
     return(
-    <div className="canvas">
-        {canvasDivs}
+    <div>
+        <div>
+            {/* <input type="range" min="1" max="100" value="50"></input> */}
+        </div>
+        <div className="canvas" style={styles}>
+            {canvasDivs}
+        </div>
     </div>
     )
 }

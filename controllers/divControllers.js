@@ -5,7 +5,7 @@ module.exports = {
         findAll: function(req, res) {
           console.log("findAll: " + req.params)
         db.Div
-          .find({})
+          .find({}).select(["_id", "rgb_color", "canvas_id"])
           .then(dbModel => {
             return res.json(dbModel)
           })
@@ -19,8 +19,11 @@ module.exports = {
       },
         findCanvas: function(req, res) {
           console.log(req.params.id);
+          let fields = ["_id", "rgb_color", "canvas_id"]
+
         db.Div
           .find({canvas_id: req.params.id})
+          .select(fields)
           .then(dbCanvas => {
             // console.log("canvas: " + dbCanvas)
             return res.json(dbCanvas)
