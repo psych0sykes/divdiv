@@ -27,7 +27,7 @@ function Canvas(props) {
     useEffect(() => {
         const fetchData = async () => {
             const result = await API.getCanvasDivsArray(canvasId).catch(err => console.log(err));
-            console.log(result.data)
+            // console.log(result.data)
             setCanvasDivs(populateCanvas(result.data));
         }
         fetchData();
