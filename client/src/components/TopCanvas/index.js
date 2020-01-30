@@ -3,34 +3,59 @@ import {Row, Container, Col} from "../Grid";
 import API from "../../utils/API";
 import _Div from "../_Div";
 import Canvas from "../Canvas";
+import "./style.css";
 
 function TopCanvas(props) {
 
     return(
     <div className="topCanvas">
-        <div>
-            <Row>
-                <Canvas canvasId="69" width="250px" height="250px"/>
-            </Row>
-            <Row>
-                <h2>Food Pantry</h2>
-            </Row>
+        <div className="topItem">
+            <Container>
+                <Row>
+                    <Canvas canvasId="69" height="200px"/>
+                </Row>
+                <Row>
+                    <div className="topCanvasTitle">
+                        <h5>Food Pantry</h5>
+                    </div>
+                </Row>
+                <Row>
+                    <Col size="6">
+                        <div>
+                            {/*  */}
+                        </div>
+                    </Col>
+                    <Col size="6">
+                        <div>
+                            {/*  */}
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
-        <div>
-            <Row>
-                <Canvas canvasId="6969" width="250px" height="250px"/>
-            </Row>
-            <Row>
-                <h2>Save the Koalas</h2>
-            </Row>
+        <div className="topItem">
+            <Container>
+                <Row>
+                    <Canvas canvasId="6969" height="200px"/>
+                </Row>
+                <Row>
+                    <div className="topCanvasTitle">
+                        <h5>Save the Koalas</h5>
+                    </div>
+                </Row>
+            </Container>
         </div>
-        <div>
-            <Row>
-                <Canvas canvasId="696969" width="250px" height="250px"/>
-            </Row>
-            <Row>
-                <h2>Brent VS Cancer</h2>
-            </Row>
+        <div className="topItem">
+            <Container>
+                <Row>
+                    <Canvas canvasId="696969" height="200px"/>
+                </Row>
+                <Row>
+                    <div className="topCanvasTitle">
+                        <h5>Brent VS Cancer</h5>
+                    </div>
+                </Row>
+            </Container>
         </div>
     </div>
     )

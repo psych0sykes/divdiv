@@ -90,12 +90,8 @@ nav a {
     flex-wrap: wrap;
     justify-content: center;
     overflow: hidden;
+    background-color: white;
+    padding: 3px;
 }
-.topCanvas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 10px;
-}
+
 

@@ -1,0 +1,17 @@
+.topCanvas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+.topCanvasTitle {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 100%;
+}
+.topItem {
+    width: 25%;
+    margin: 10px;
+}
