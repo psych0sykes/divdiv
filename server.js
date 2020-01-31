@@ -5,6 +5,8 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 var bodyParser = require('body-parser');
+const session = require("express-session");
+const passport = require("passport");
 
 
 // Serve up static assets (usually on heroku)
@@ -13,6 +15,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(bodyParser.json());
+
+app.use(express.static("public"));
+app.use(session({ secret: "i got divs all around me" }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use(routes);
