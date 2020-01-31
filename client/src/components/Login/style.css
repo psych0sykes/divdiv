@@ -1,0 +1,32 @@
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#loginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.loginCard{
+    margin-top: 200px;
+    width: 320px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(150, 69, 0, 0.4), 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    position: fixed;
+    z-index: 2;
+}
+#loginExitButton {
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+    color: lightgray;
+}
+#loginExitButton:hover {
+    color: orangered;
+    cursor: pointer;
+}

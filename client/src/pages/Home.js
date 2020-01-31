@@ -12,22 +12,24 @@ class Home extends Component {
 
     render() {
         return(
-            <Container>
-                <Row>
-                    <TopCanvas/>
-                </Row>
-                <FlexRow>
-                    <Icon size="25"/>
-                    <Slogan>Company Slogan Goes Here</Slogan>
-                    <Icon size="25"/>
-                </FlexRow>
-                <Row>
-                    <AboutDivDiv/>
-                </Row>
-                <Row>
-                    
-                </Row>
-            </Container>
+            <div>
+                <Container>
+                    <Row>
+                        <TopCanvas/>
+                    </Row>
+                    <FlexRow wrap="nowrap">
+                        <Icon size="25"/>
+                        <Slogan>Company Slogan Goes Here</Slogan>
+                        <Icon size="25"/>
+                    </FlexRow>
+                    <Row>
+                        <AboutDivDiv/>
+                    </Row>
+                    <Row>
+                        
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

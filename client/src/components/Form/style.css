@@ -1,0 +1,12 @@
+.submitButton {
+    margin: 10px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px 15px 8px 15px;
+}
+.submitButton:hover{
+    color: orangered;
+    background-color: white;
+}

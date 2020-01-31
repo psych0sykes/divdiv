@@ -22,9 +22,12 @@ export function Col({ size, children }) {
   );
 }
 
-export function FlexRow({ fluid, children }) {
+export function FlexRow({ fluid, children, wrap }) {
+
+  const style = {flexWrap: wrap ? wrap : "wrap"}
+
   return  <div className={`row${fluid ? "-fluid" : ""}`}>
-            <div className="flexRow">
+            <div className="flexRow" style={style}>
               {children}
             </div>
           </div>;

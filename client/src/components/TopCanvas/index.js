@@ -19,18 +19,18 @@ function TopCanvas(props) {
                         <h5>Food Pantry</h5>
                     </div>
                 </Row>
-                <Row>
+                {/* <Row>
                     <Col size="6">
                         <div>
-                            {/*  */}
+                            
                         </div>
                     </Col>
                     <Col size="6">
                         <div>
-                            {/*  */}
+                            
                         </div>
                     </Col>
-                </Row>
+                </Row> */}
             </Container>
         </div>
         <div className="topItem">

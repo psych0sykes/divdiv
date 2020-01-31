@@ -1,0 +1,8 @@
+.canvas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    padding: 3px;
+}

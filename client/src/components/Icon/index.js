@@ -6,8 +6,9 @@ function Icon(props) {
 const fullSize = props.size + "px";
 const halfSize = (parseFloat(props.size) / 2).toString() + "px";
 const [colorArray,setColorArray] = useState(["black","black","black","black"])
-console.log(colorArray)
-let colors = ["orangered","black","blue","yellow","orange","red"]
+let colors = props.colors ? props.colors : ["orangered","black","blue","yellow","orange","red"]
+
+// condition ? exprIfTrue : exprIfFalse
 
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
@@ -23,6 +24,7 @@ useEffect(() => {
   const style= [
     {width: fullSize,
         height: fullSize},
+
     {backgroundColor: colorArray[0],
         width: halfSize,
         height: halfSize},
@@ -41,7 +43,7 @@ useEffect(() => {
   ];
 
   return (
-    <div>
+    <div style={style[0]}>
         <div className="divIcon" style={style[0]}>
             <div style={style[1]}></div>
             <div style={style[2]}></div>
