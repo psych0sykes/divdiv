@@ -1,3 +1,5 @@
 module.exports = {
-  Div: require("./div")
+  Div: require("./div"),
+  Canvas: require("./canvas"),
+  User: require("./user")
 };

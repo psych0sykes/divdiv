@@ -8,6 +8,12 @@ mongoose.connect(
   "mongodb://localhost/divdiv"
 );
 
+const divSeed = [];
+const userSeed = [];
+const canvasSeed = [];
+
+
+
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -17,7 +23,23 @@ function getRandomColor() {
   return color;
 };
 
-function createDivs(number, campId, canvId, campName, array) {
+function createSeed(number, campId, canvId, campName) {
+
+    for (var i = 0; i < number; i++){
+        let newUser = {
+          username: "test" + i,
+          password: "password"
+        }
+        userSeed.push(newUser);
+    };
+
+    let newCanvas = {
+      canvas_id: canvId,
+      campaign_id: campId,
+      username: "test1"
+    };
+
+    canvasSeed.push(newCanvas);
 
     for (var i = 0; i < number; i++){
         let newDiv = {
@@ -29,20 +51,42 @@ function createDivs(number, campId, canvId, campName, array) {
           canvas_id: canvId,
           message: "This is test number: " + i
         }
-        array.push(newDiv);
-    }
+        divSeed.push(newDiv);
+    };
     return console.log("<===== created " + number + " new divs to canvas " + canvId + " ======>")
 }
 
-const divSeed = []
-
-createDivs(333, "69", "69", "333 divs", divSeed);
-createDivs(2500, "6969", "6969", "2500 divs", divSeed);
-createDivs(150, "696969", "696969","150 divs", divSeed);
+createSeed(333, "69", "69", "333 divs");
+createSeed(2500, "6969", "6969", "2500 divs");
+createSeed(150, "696969", "696969","150 divs");
 
 db.Div
   .remove({})
   .then(() => db.Div.collection.insertMany(divSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+db.User
+  .remove({})
+  .then(() => db.User.collection.insertMany(userSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+db.Canvas
+  .remove({})
+  .then(() => db.Canvas.collection.insertMany(canvasSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

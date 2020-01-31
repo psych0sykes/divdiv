@@ -8,6 +8,6 @@ const userSchema = new Schema({
 
 });
 
-const Div = mongoose.model("Div", userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
