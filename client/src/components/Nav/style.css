@@ -26,6 +26,7 @@ nav a {
 #navLogin:hover{
     color: orangered;
     background-color: white;
+    cursor: pointer;
 }
 #siteTitle {
     font-size: x-large;

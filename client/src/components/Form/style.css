@@ -9,4 +9,5 @@
 .submitButton:hover{
     color: orangered;
     background-color: white;
+    cursor: pointer;
 }
