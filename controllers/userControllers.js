@@ -1,18 +1,18 @@
 const db = require("../models");
-var passport = require('passport')
-, LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport')
 
-passport.use(new LocalStrategy(
-function(username, password, done) {
-  db.User.findOne({ username: username }, function (err, user) {
-    if (err) { return done(err); }
-    if (!user) {
-      return done(null, false, { message: 'Incorrect username.' });
+module.exports = {
+
+    login: function(){
+        passport.authenticate('local'), function(req, res){
+            res.redirect("/");
+        }
+    },
+
+    test: function(req, res){
+        res.json({message: "you got it"})
     }
-    if (!user.validPassword(password)) {
-      return done(null, false, { message: 'Incorrect password.' });
-    }
-    return done(null, user);
-  });
 }
-));
+
+
+
