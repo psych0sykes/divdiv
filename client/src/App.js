@@ -33,7 +33,7 @@ class App extends Component {
           <Nav status={this.state.status} loggedIn={this.status}/>
           <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/campaign/create" component={CanvasCreate} />
+          <Route exact path="/campaign/create" component={this.state.status ? CanvasCreate : Home} />
           </Switch>
           <button onClick={() => this.status()} >status</button>
           <button onClick={() => this.logout()} >log out</button>
