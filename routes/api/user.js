@@ -20,12 +20,11 @@ router.route("/in")
  .get(function(req, res){
   //  console.log("new guy in the system")
   let response = {
-    username: req.user.username,
+    username: req.user.username ? req.user.username : false,
     display: "hidden"
   }
 
-   res.json(response)
-  //  .catch(err => res.status(422).json(err));
+   response.username ? res.json(response) : res.json(false)
  });
 
 router.route("/out")

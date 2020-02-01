@@ -12,6 +12,20 @@ input {
 input:focus {
     outline-color: orangered;
 }
+textarea {
+    width: 250px;
+    height: 250px;
+    padding: 2px;
+    border: 2px solid black;
+    box-shadow: 3px 3px gray;
+    margin: 5px;
+}
+textarea:focus {
+    outline-color: orangered;
+}
+button:focus {
+    outline-color: orangered;
+}
 a:hover {
     text-decoration: none;
     color: orangered;

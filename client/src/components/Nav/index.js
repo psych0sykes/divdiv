@@ -4,25 +4,23 @@ import Login from "../Login";
 import API from "../../utils/API";
 import "./style.css";
 
-function Nav() {
+function Nav(props) {
 
   const [displayLogin,setDisplayLogin] = useState("none")
-  const [loggedIn,setLoggedIn] = useState(false);
 
   function loginClick() {
     displayLogin === "none" ? setDisplayLogin("block") : setDisplayLogin("none");
   }
   
   function logOutClick() {
-    setLoggedIn(false);
     API.logOut()
-    .then(console.log("out"))
+    .then(props.loggedIn())
     .catch(err => console.log(err));
   }
 
   return(
     <div>
-      <Login display={displayLogin} close={loginClick} loggedIn={setLoggedIn}/>
+      <Login display={displayLogin} close={loginClick} loggedIn={props.loggedIn}/>
     <nav>
       <a href="/">
         <span id="siteTitle">
@@ -33,7 +31,7 @@ function Nav() {
       <div id="navItems">
           <a className="navLink" href="/campaign/create" id="createCanvas">start a campaign</a>
         <div>
-            <div id="navLogin" onClick={loggedIn ? logOutClick : loginClick}>{loggedIn ? "log out" : "log in"}</div>
+            <div id="navLogin" onClick={props.status ? logOutClick : loginClick}>{props.status ? "log out" : "log in"}</div>
         </div>
       </div>
     </nav>
