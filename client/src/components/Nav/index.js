@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Icon from "../Icon";
 import Login from "../Login";
+import Fade from "../Fade";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -20,6 +21,7 @@ function Nav(props) {
 
   return(
     <div>
+      <Fade display={displayLogin}/>
       <Login display={displayLogin} close={loginClick} loggedIn={props.loggedIn}/>
     <nav>
       <a href="/">

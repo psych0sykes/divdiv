@@ -23,12 +23,11 @@ function Login(props) {
     };
 
     return(
-        
         <Container style={style}>
             <FlexRow style={style}>
             <div className="loginCard" style={style}>
-                <div id="loginExitButton" onClick={props.close}>X</div>
-            <form id="loginForm" onSubmit={handleFormSubmit}>
+                <div className="loginExitButton" onClick={props.close}>X</div>
+            <form className="loginForm" onSubmit={handleFormSubmit}>
                 <Row>
                     <input type="text" name="username" placeholder="username" onChange={event => setUsername(event.target.value)}/>
                 </Row>
@@ -42,7 +41,6 @@ function Login(props) {
             </div>
             </FlexRow>
         </Container>
-        
     )
 };
 

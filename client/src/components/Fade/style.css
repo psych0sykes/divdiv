@@ -1,0 +1,8 @@
+.fade {
+    background-color: black;
+    z-index: 2;
+    opacity: 80%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
