@@ -19,5 +19,9 @@ export default {
   saveDiv: function(divObj) {
     console.log(divObj)
     return axios.post("/api/divs", divObj);
+  },
+  login: function(creds) {
+    console.log(creds)
+    return axios.post("/api/user/login/local", creds);
   }
 };

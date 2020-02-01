@@ -7,11 +7,17 @@ import API from "../../utils/API";
 function Login(props) {
 
     const style = {display: props.display}
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
 
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        console.log("log in");     
+        console.log("log in");
+        console.log(username);
+        API.login({username: username, password: password})
+        .then()
+        .catch(err => console.log(err));
     };
 
     return(
@@ -22,10 +28,10 @@ function Login(props) {
                 <div id="loginExitButton" onClick={props.close}>X</div>
             <form id="loginForm" onSubmit={handleFormSubmit}>
                 <Row>
-                    <input type="text" name="email" placeholder="email"/>
+                    <input type="text" name="username" placeholder="username" onChange={event => setUsername(event.target.value)}/>
                 </Row>
                 <Row>
-                    <input type="text" name="password" placeholder="password"/>
+                    <input type="text" name="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
                 </Row>
                 <Row>
                     <SubmitButton>login</SubmitButton>

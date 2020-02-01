@@ -6,7 +6,7 @@ module.exports = {
     login: function(){
         passport.authenticate('local'), function(req, res){
             res.redirect("/");
-        }
+        }.catch(err => res.json(err))
     },
 
     test: function(req, res){
