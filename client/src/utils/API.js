@@ -7,15 +7,6 @@ export default {
   getCanvasDivsArray: function(id) {
     return axios.get("/api/canvas/" + id);
   },
-
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
-//   // Deletes the book with the given id
-//   deleteBook: function(id) {
-//     return axios.delete("/api/books/" + id);
-//   },
-
   saveDiv: function(divObj) {
     console.log(divObj)
     return axios.post("/api/divs", divObj);
