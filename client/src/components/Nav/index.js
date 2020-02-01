@@ -12,10 +12,11 @@ function Nav() {
   function loginClick() {
     displayLogin === "none" ? setDisplayLogin("block") : setDisplayLogin("none");
   }
-
+  
   function signOutClick() {
+    setLoggedIn(false);
     API.logout()
-    .then(console.log("get out"))
+    .then(console.log("out"))
     .catch(err => console.log(err));
   }
 

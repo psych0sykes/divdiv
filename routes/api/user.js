@@ -19,12 +19,13 @@ router.route("/logout")
 router.route("/in")
  .get(function(req, res){
   //  console.log("new guy in the system")
-  const response = {
+  let response = {
     username: req.user.username,
     display: "hidden"
   }
 
-   res.json(response);
+   res.json(response)
+  //  .catch(err => res.status(422).json(err));
  });
 
 router.route("/out")
