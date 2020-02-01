@@ -23,5 +23,8 @@ export default {
   login: function(creds) {
     console.log(creds)
     return axios.post("/api/user/login/local", creds);
+  },
+  logout: function(req) {
+    return axios.get("/api/user/logout", req);
   }
 };

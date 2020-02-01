@@ -10,13 +10,15 @@ function Login(props) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-
     const handleFormSubmit = event => {
         event.preventDefault();
         console.log("log in");
         console.log(username);
         API.login({username: username, password: password})
-        .then()
+        .then(function(){
+            props.close();
+            props.loggedIn(true);
+        })
         .catch(err => console.log(err));
     };
 

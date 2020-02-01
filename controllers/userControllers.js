@@ -1,18 +1,9 @@
-const db = require("../models");
-const passport = require('passport')
+// const db = require("../models");
+// const passport = require('passport')
 
-module.exports = {
+// module.exports = {
 
-    login: function(){
-        passport.authenticate('local'), function(req, res){
-            res.redirect("/");
-        }.catch(err => res.json(err))
-    },
-
-    test: function(req, res){
-        res.json({message: "you got it"})
-    }
-}
+// }
 
 
 
