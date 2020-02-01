@@ -32,3 +32,7 @@ nav a {
     font-size: x-large;
     color: white;
 }
+.navLink:hover {
+    cursor: pointer;
+    color: orangered;
+}

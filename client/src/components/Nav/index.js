@@ -7,10 +7,10 @@ import "./style.css";
 
 function Nav(props) {
 
-  const [displayLogin,setDisplayLogin] = useState("none")
+  const displayLogin = props.displayLogin
 
   function loginClick() {
-    displayLogin === "none" ? setDisplayLogin("block") : setDisplayLogin("none");
+    props.setDisplayLogin();
   }
   
   function logOutClick() {
@@ -31,7 +31,7 @@ function Nav(props) {
         </span>
       </a>
       <div id="navItems">
-          <a className="navLink" href="/campaign/create" id="createCanvas">start a campaign</a>
+          <a href={props.status ? "/canvas/create" : null} onClick={props.status ? null : loginClick} id="createCanvas"><div className="navLink">create a canvas</div></a>
         <div>
             <div id="navLogin" onClick={props.status ? logOutClick : loginClick}>{props.status ? "log out" : "log in"}</div>
         </div>
