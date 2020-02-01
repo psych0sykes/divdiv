@@ -24,7 +24,7 @@ export default {
     console.log(creds)
     return axios.post("/api/user/login/local", creds);
   },
-  logout: function(req) {
+  logOut: function(req) {
     return axios.get("/api/user/logout", req);
   },
   loggedIn: function(req) {

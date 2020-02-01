@@ -13,9 +13,9 @@ function Nav() {
     displayLogin === "none" ? setDisplayLogin("block") : setDisplayLogin("none");
   }
   
-  function signOutClick() {
+  function logOutClick() {
     setLoggedIn(false);
-    API.logout()
+    API.logOut()
     .then(console.log("out"))
     .catch(err => console.log(err));
   }
@@ -31,9 +31,9 @@ function Nav() {
         </span>
       </a>
       <div id="navItems">
-          <a className="navLink" href="" id="navYourDiv">your div</a>
+          <a className="navLink" href="/campaign/create" id="createCanvas">start a campaign</a>
         <div>
-            <div id="navLogin" onClick={loggedIn ? signOutClick : loginClick}>{loggedIn ? "sign out" : "login"}</div>
+            <div id="navLogin" onClick={loggedIn ? logOutClick : loginClick}>{loggedIn ? "log out" : "log in"}</div>
         </div>
       </div>
     </nav>
