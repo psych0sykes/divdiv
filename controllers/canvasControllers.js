@@ -14,6 +14,8 @@ module.exports = {
       },
         newCanvas: function(req, res) {
 
+          console.log(req.body)
+
         db.Canvas
           .create(req.body)
           .then(newCanvas => res.json(newCanvas))

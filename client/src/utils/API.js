@@ -5,7 +5,7 @@ export default {
     return axios.get("/api/divs");
   },
   getCanvasDivsArray: function(id) {
-    return axios.get("/api/canvas/" + id);
+    return axios.get("/api/divs/canvas/" + id);
   },
   saveDiv: function(divObj) {
     console.log(divObj)
@@ -13,7 +13,7 @@ export default {
   },
   saveCanvas: function(canvObj) {
     console.log(canvObj)
-    return axios.post("/api/canvas", canvObj);
+    return axios.post("/api/canvas/new", canvObj);
   },
   login: function(creds) {
     console.log(creds)

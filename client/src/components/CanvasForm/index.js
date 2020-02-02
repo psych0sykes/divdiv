@@ -4,7 +4,7 @@ import {SubmitButton} from "../Form";
 import API from "../../utils/API";
 import "./style.css";
 
-function NewDivForm(props) {
+function CanvasForm(props) {
 
     const [canvasTitle, setCanvasTitle] = useState();
     const [bio, setBio] = useState();
@@ -16,7 +16,8 @@ function NewDivForm(props) {
           API.saveCanvas({
             canvas_title: canvasTitle,
             owner: props.username,
-            bio: bio
+            bio: bio,
+            canvas_id: "test"
             })
             .then()
             .catch(err => console.log(err))
@@ -27,7 +28,7 @@ function NewDivForm(props) {
             <form id="newCanvasForm" onSubmit={handleFormSubmit}>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
-                            <input value={canvasTitle} onChange={event => setCanvasTitle(event.target.value)} type="text" name="canvas_title" placeholder="canvas title"/>
+                            <input onChange={event => setCanvasTitle(event.target.value)} type="text" name="canvas_title" placeholder="canvas title"/>
                         </div>
                         <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
@@ -42,7 +43,7 @@ function NewDivForm(props) {
                     </Row>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
-                            <textarea value={bio} onChange={event => setBio(event.target.value)} name="bio" placeholder="canvas bio"/>
+                            <textarea onChange={event => setBio(event.target.value)} name="bio" placeholder="canvas bio"/>
                         </div>
                         <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
@@ -59,12 +60,8 @@ function NewDivForm(props) {
                         <SubmitButton>create canvas</SubmitButton>
                     </FlexRow>
             </form>
-                <Row>
-                    <div>{canvasTitle}</div>
-                    <br></br>
-                </Row>
         </Container>
     );
 }
 
-export default NewDivForm;
+export default CanvasForm;
