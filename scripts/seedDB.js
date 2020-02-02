@@ -12,8 +12,6 @@ const divSeed = [];
 const userSeed = [];
 const canvasSeed = [];
 
-
-
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -23,7 +21,10 @@ function getRandomColor() {
   return color;
 };
 
-function createSeed(number, campId, canvId, campName) {
+function createSeed(number, campId, canvId, canvTitle) {
+
+    let donationTotal = 0
+    let supportTotal = 0
 
     for (var i = 0; i < number; i++){
         let newUser = {
@@ -33,27 +34,32 @@ function createSeed(number, campId, canvId, campName) {
         userSeed.push(newUser);
     };
 
-    let newCanvas = {
-      canvas_id: canvId,
-      campaign_id: campId,
-      username: "test1"
-    };
-
-    canvasSeed.push(newCanvas);
-
     for (var i = 0; i < number; i++){
         let newDiv = {
           rgb_color: getRandomColor(),
           username: "test" + i,
           donation_amount: Math.floor(Math.random() * 100),
-          campaign_name: campName,
-          campaign_id: campId,
+          canvas_title: canvTitle,
           canvas_id: canvId,
           message: "This is test number: " + i
         }
+        donationTotal = donationTotal + newDiv.donation_amount;
+        supportTotal++;
+
         divSeed.push(newDiv);
     };
-    return console.log("<===== created " + number + " new divs to canvas " + canvId + " ======>")
+
+    let newCanvas = {
+      canvas_id: canvId,
+      owner: "test1",
+      canvas_title: canvTitle,
+      bio: "this is a test canvas",
+      donation_total: donationTotal,
+      support_total: supportTotal
+    };
+    canvasSeed.push(newCanvas);
+
+    return
 }
 
 createSeed(333, "69", "69", "333 divs");

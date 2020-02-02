@@ -1,8 +1,14 @@
 const router = require("express").Router();
-const divControllers = require("../../controllers/divControllers");
+const canvasControllers = require("../../controllers/canvasControllers");
 
-router.route("/:id")
-  .get(divControllers.findCanvas)
+router.route("/find/:id")
+  .get(canvasControllers.findCanvas)
+
+router.route("/new")
+  .post(canvasControllers.newCanvas)
+
+router.route("/find/all")
+  .get(canvasControllers.findAll)
 
 
 module.exports = router;

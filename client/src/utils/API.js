@@ -11,6 +11,10 @@ export default {
     console.log(divObj)
     return axios.post("/api/divs", divObj);
   },
+  saveCanvas: function(canvObj) {
+    console.log(canvObj)
+    return axios.post("/api/canvas", canvObj);
+  },
   login: function(creds) {
     console.log(creds)
     return axios.post("/api/user/login/local", creds);
@@ -21,4 +25,5 @@ export default {
   loggedIn: function(req) {
     return axios.get("/api/user/in");
   }
+
 };

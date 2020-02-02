@@ -4,28 +4,28 @@ const db = require("../models");
 module.exports = {
         findAll: function(req, res) {
           console.log("findAll: " + req.params)
-        db.Div
+        db.Canvas
           .find({})
-          .select(["_id", "rgb_color", "canvas_id"])
-          .then(dbModel => {
-            return res.json(dbModel)
+          .select()
+          .then(canvas => {
+            return res.json(canvas)
           })
           .catch(err => res.status(422).json(err));
       },
-        newDiv: function(req, res) {
+        newCanvas: function(req, res) {
 
-        db.Div
+        db.Canvas
           .create(req.body)
-          .then(createdDiv => res.json(createdDiv))
+          .then(newCanvas => res.json(newCanvas))
           .catch(err => res.status(422).json(err));
       },
         findCanvas: function(req, res) {
           console.log(req.params.id);
-          let fields = ["_id", "rgb_color", "canvas_id"]
+        //   let fields = ["_id", "rgb_color", "canvas_id"]
 
-        db.Div
+        db.Canvas
           .find({canvas_id: req.params.id})
-          .select(fields)
+          .select()
           .then(dbCanvas => {
             // console.log("canvas: " + dbCanvas)
             return res.json(dbCanvas)
