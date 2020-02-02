@@ -15,7 +15,7 @@ function Nav(props) {
   
   function logOutClick() {
     API.logout()
-    .then(props.loggedIn)
+    .then(window.location.assign("/"))
     .catch(err => console.log(err));
   }
 
@@ -31,7 +31,7 @@ function Nav(props) {
         </span>
       </a>
       <div id="navItems">
-          <a href="/user/account"><div className="navLink">your account</div></a>
+          <a href="/user/account"><div className="navLink">your divdiv</div></a>
           <a href="/canvas/create"><div className="navLink">create a canvas</div></a>
         <div>
             <div id="navLogin" onClick={props.status ? logOutClick : loginClick}>{props.status ? "log out" : "log in"}</div>

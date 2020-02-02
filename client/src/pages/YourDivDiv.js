@@ -7,7 +7,7 @@ import API from "../utils/API";
 
 
 
-class CampaignCreate extends Component {
+class YourDivDiv extends Component {
 
     state = {
         username: ""
@@ -48,4 +48,4 @@ class CampaignCreate extends Component {
     }
 }
 
-export default CampaignCreate;
+export default YourDivDiv;
