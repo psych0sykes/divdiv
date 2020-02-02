@@ -4,7 +4,7 @@ import {SubmitButton, FlexFormInput} from "../Form";
 import API from "../../utils/API";
 import "./style.css";
 
-function CanvasForm(props) {
+function UserForm(props) {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
@@ -15,10 +15,19 @@ function CanvasForm(props) {
     const handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log("submitting new div");
-          API.saveCanvas({
-            })
-            .then()
+        console.log("submitting new user");
+          API.saveUser({
+              username: username,
+              password: password,
+              email: email,
+              first_name: firstName,
+              last_name: lastName
+          })
+            .then(() => {
+                API.login({username: username, password: password})
+                window.location.reload()
+                }
+            )
             .catch(err => console.log(err))
         };
 
@@ -48,4 +57,4 @@ function CanvasForm(props) {
     );
 }
 
-export default CanvasForm;
+export default UserForm;

@@ -17,9 +17,11 @@ router.route("/logout")
 });
 
 router.route("/in")
- .get(function(req, res){
+  .get(function(req, res){
   //  console.log("new guy in the system")
 
+router.route("/new")
+  .post(userControllers.newUser)
   
   let response = {
     username: req.user.username ? req.user.username : false,
