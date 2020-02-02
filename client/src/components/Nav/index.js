@@ -24,13 +24,14 @@ function Nav(props) {
       <Fade display={displayLogin}/>
       <Login display={displayLogin} close={loginClick} loggedIn={props.loggedIn}/>
     <nav>
-      <a href="/">
+      <a href="/" style={{border: "none"}}>
         <span id="siteTitle">
           <span>divdiv</span>
           <Icon size="30px" colors={["orangered","white","blue","yellow","orange","red"]}/>
         </span>
       </a>
       <div id="navItems">
+          <a href="/user/account"><div className="navLink">your account</div></a>
           <a href="/canvas/create"><div className="navLink">create a canvas</div></a>
         <div>
             <div id="navLogin" onClick={props.status ? logOutClick : loginClick}>{props.status ? "log out" : "log in"}</div>

@@ -9,6 +9,9 @@ nav {
 }
 nav a {
     color: white;
+    border-right: 2px solid white;
+    padding-right: 10px;
+    margin-left: 10px;
 }
 #navItems {
     display: flex;
@@ -31,6 +34,7 @@ nav a {
 #siteTitle {
     font-size: x-large;
     color: white;
+    border-radius: 0;
 }
 .navLink:hover {
     cursor: pointer;
