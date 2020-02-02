@@ -14,8 +14,8 @@ function Nav(props) {
   }
   
   function logOutClick() {
-    API.logOut()
-    .then(props.loggedIn())
+    API.logout()
+    .then(props.loggedIn)
     .catch(err => console.log(err));
   }
 

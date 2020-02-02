@@ -13,7 +13,7 @@ router.route("/login/local")
 router.route("/logout")
   .get(function(req, res){
     req.logout();
-    res.redirect('/api/user/out');
+    res.json({message: 'out'});
 });
 
 router.route("/in")
@@ -26,10 +26,5 @@ router.route("/in")
 
    response.username ? res.json(response) : res.json(false)
  });
-
-router.route("/out")
- .get(function(req, res){
-   console.log("out");
- })
 
 module.exports = router;
