@@ -15,6 +15,10 @@ export default {
     console.log(canvObj)
     return axios.post("/api/canvas/new", canvObj);
   },
+  saveUser: function(userObj) {
+    console.log(userObj)
+    return axios.post("/api/user/new", userObj);
+  },
   login: function(creds) {
     console.log(creds)
     return axios.post("/api/user/login/local", creds);

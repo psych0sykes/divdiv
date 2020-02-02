@@ -42,7 +42,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : SignUp}/>
           <Route exact path="/signup" component={SignUp}/>
-          <Route exact path="/user/account" component={YourProfile}/>
+          <Route exact path="/user/account" component={this.state.status ? YourProfile : SignUp}/>
           </Switch>
           <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
           <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button>
