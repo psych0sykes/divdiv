@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-import Auth from "./pages/Auth";
+import SignUp from "./pages/SignUp";
 import CanvasCreate from "./pages/CanvasCreate";
 import API from "./utils/API";
 
@@ -39,7 +39,8 @@ class App extends Component {
           <Nav status={this.state.status} loggedIn={this.status} displayLogin={this.state.displayLogin} setDisplayLogin={this.setDisplayLogin}/>
           <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : Home}/>
+          <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : SignUp}/>
+          <Route exact path="/signup" component={SignUp}/>
           </Switch>
           <button onClick={() => this.status()} >status</button>
           <button onClick={() => this.logout()} >log out</button>

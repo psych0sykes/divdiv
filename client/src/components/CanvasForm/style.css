@@ -1,3 +1,6 @@
 .formHelp p{
     color: gray;
 }
+.formColRight {
+    align-items: right;
+}

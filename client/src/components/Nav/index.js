@@ -31,7 +31,7 @@ function Nav(props) {
         </span>
       </a>
       <div id="navItems">
-          <a href={props.status ? "/canvas/create" : null} onClick={props.status ? null : loginClick} id="createCanvas"><div className="navLink">create a canvas</div></a>
+          <a href="/canvas/create"><div className="navLink">create a canvas</div></a>
         <div>
             <div id="navLogin" onClick={props.status ? logOutClick : loginClick}>{props.status ? "log out" : "log in"}</div>
         </div>

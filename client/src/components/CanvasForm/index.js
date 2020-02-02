@@ -26,10 +26,10 @@ function NewDivForm(props) {
         <Container>
             <form id="newCanvasForm" onSubmit={handleFormSubmit}>
                     <Row>
-                        <Col size="6">
+                        <div className="col-md-6 justify-content-end d-flex">
                             <input value={canvasTitle} onChange={event => setCanvasTitle(event.target.value)} type="text" name="canvas_title" placeholder="canvas title"/>
-                        </Col>
-                        <Col size="6">
+                        </div>
+                        <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
                                 <h4>
                                     canvas title
@@ -38,13 +38,13 @@ function NewDivForm(props) {
                                     What cause are you supporting?
                                 </p>
                             </div>
-                        </Col>
+                        </div>
                     </Row>
                     <Row>
-                        <Col size="6">
+                        <div className="col-md-6 justify-content-end d-flex">
                             <textarea value={bio} onChange={event => setBio(event.target.value)} name="bio" placeholder="canvas bio"/>
-                        </Col>
-                        <Col size="6">
+                        </div>
+                        <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
                                 <h4>
                                     bio
@@ -53,7 +53,7 @@ function NewDivForm(props) {
                                     Describe your campaign! Why are you gathering support?
                                 </p>
                             </div>
-                        </Col>
+                        </div>
                     </Row>
                     <FlexRow>
                         <SubmitButton>create canvas</SubmitButton>
