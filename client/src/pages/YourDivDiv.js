@@ -4,6 +4,7 @@ import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
 import CanvasForm from "../components/CanvasForm";
 import API from "../utils/API";
+import ProfileTabs from "../components/ProfileTabs";
 
 
 
@@ -34,14 +35,7 @@ class YourDivDiv extends Component {
                         <Slogan>your profile</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
-                    <Row>
-                        <div className="col-mdd-6 justify-content-end d-flex">
-                            
-                        </div>
-                        <div className="col-mdd-6 justify-content-start d-flex">
-                            
-                        </div>
-                    </Row>
+                    <ProfileTabs/>
                 </Container>
             </div>
         );

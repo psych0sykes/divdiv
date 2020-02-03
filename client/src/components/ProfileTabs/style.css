@@ -1,0 +1,13 @@
+.profileTab {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100px;
+    margin: 4px;
+}
+.profileTab:hover {
+    background-color: white;
+    color: orangered;
+    cursor: pointer;
+}
