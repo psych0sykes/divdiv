@@ -35,7 +35,7 @@ class YourDivDiv extends Component {
                         <Slogan>your profile</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
-                    <ProfileTabs/>
+                    <ProfileTabs userId={this.state.username}/>
                 </Container>
             </div>
         );
