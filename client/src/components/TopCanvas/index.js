@@ -1,62 +1,14 @@
-import React, { useState, useEffect } from "react";
-import {Row, Container, Col} from "../Grid";
-import API from "../../utils/API";
-import _Div from "../_Div";
-import Canvas from "../Canvas";
+import React from "react";
+import CanvasCard from "../Canvas/CanvasCard";
 import "./style.css";
 
 function TopCanvas(props) {
 
     return(
     <div className="topCanvas">
-        <div className="topItem">
-            <Container>
-                <Row>
-                    <Canvas canvasId="69" size="200px" divSize="10px"/>
-                </Row>
-                <Row>
-                    <div className="topCanvasTitle">
-                        <h5>Food Pantry</h5>
-                    </div>
-                </Row>
-                {/* <Row>
-                    <Col size="6">
-                        <div>
-                            
-                        </div>
-                    </Col>
-                    <Col size="6">
-                        <div>
-                            
-                        </div>
-                    </Col>
-                </Row> */}
-            </Container>
-        </div>
-        <div className="topItem">
-            <Container>
-                <Row>
-                    <Canvas canvasId="6969" size="200px" divSize="10px"/>
-                </Row>
-                <Row>
-                    <div className="topCanvasTitle">
-                        <h5>Save the Koalas</h5>
-                    </div>
-                </Row>
-            </Container>
-        </div>
-        <div className="topItem">
-            <Container>
-                <Row>
-                    <Canvas canvasId="696969" size="200px" divSize="10px"/>
-                </Row>
-                <Row>
-                    <div className="topCanvasTitle">
-                        <h5>Brent VS Cancer</h5>
-                    </div>
-                </Row>
-            </Container>
-        </div>
+        <CanvasCard canvasId="69" size="200px" divSize="10px" canvasTitle="Food Pantry"/>
+        <CanvasCard canvasId="6969" size="200px" divSize="10px" canvasTitle="Koala Aid"/>
+        <CanvasCard canvasId="696969" size="200px" divSize="10px" canvasTitle="Save Walter White"/>
     </div>
     )
 }

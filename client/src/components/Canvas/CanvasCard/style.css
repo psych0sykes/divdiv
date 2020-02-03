@@ -1,0 +1,13 @@
+.canvasCardTitle {
+    color: white;
+    background-color: black;
+    box-shadow: inset 0 0 5px #666666;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+}
+.canvasCard {
+    width: 25%;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(150, 69, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.075);
+}

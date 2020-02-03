@@ -5,7 +5,7 @@ import _Div from "../../_Div";
 import "../style.css";
 import { Collection } from "mongoose";
 
-function CanvasByUser(props) {
+function CanvasDivsByUser(props) {
 
     const [divStyle, setDivStyle] = useState({width: props.div, height: props.div, backgroundColor: "gray"});
     const [canvasDivs,setCanvasDivs] = useState();
@@ -52,4 +52,4 @@ function CanvasByUser(props) {
     )
 }
 
-export default CanvasByUser
+export default CanvasDivsByUser

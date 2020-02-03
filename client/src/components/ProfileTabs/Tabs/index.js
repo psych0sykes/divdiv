@@ -1,16 +1,21 @@
 import React from "react";
-import CanvasByUser from "../../Canvas/CanvasByUser";
+import CanvasDivsByUser from "../../Canvas/CanvasDivsByUser";
+import {FlexRow} from "../../Grid";
 import "./style.css"
 
 export function Divs() {
 return (
-    <div>  
-        <CanvasByUser width="300px" div="50px"/>
+    <div>
+        <FlexRow>  
+            <CanvasDivsByUser width="300px" div="50px"/>
+        </FlexRow>
     </div>
 )
 }
 export function Canvases({userId}) {
-    return <div>Canvases</div>;
+    return  <div>
+
+            </div>;
 }
   export function Account({userId}) {
     return <div>Account</div>;
