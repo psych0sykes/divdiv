@@ -7,13 +7,13 @@ import "./style.css";
 function Canvas(props) {
 
     const canvasId = props.canvasId;
-    const [divSize, setDivSize] = useState("10px");
+    const [divSize, setDivSize] = useState(props.divSize);
     const [divStyle, setDivStyle] = useState({width: divSize, height: divSize, backgroundColor: "gray"});
     const [canvasDivs,setCanvasDivs] = useState();
 
     const styles = {
-        width: props.width,
-        height: props.height,
+        width: props.size,
+        height: props.size,
         overflow: "hidden",
         border: "2px solid black",
     }

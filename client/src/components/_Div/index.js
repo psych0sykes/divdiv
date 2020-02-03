@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
-import {Row, Container, Col} from "../Grid";
+import React from "react";
 
 
 function _Div(props) {
 
-    const [divStyle, setDivStyle] = useState(
+    const divStyle =
         {  
             width: props.Style.width,
             height: props.Style.height,
             backgroundColor: props.RgbColor
-        })
+        };
 
     return(
     <div style={divStyle}></div>)

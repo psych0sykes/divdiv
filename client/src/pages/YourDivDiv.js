@@ -10,22 +10,6 @@ import ProfileTabs from "../components/ProfileTabs";
 
 class YourDivDiv extends Component {
 
-    state = {
-        username: ""
-    }
-
-    componentDidMount() {
-        this.status()
-    }
-    
-    status = () => {
-        API.loggedIn()
-        .then((res) => {
-          console.log(res.data.username)
-          this.setState({username: res.data.username})})
-        .catch((err) => console.log(err));
-    }
-
     render() {
         return(
             <div>
@@ -35,7 +19,7 @@ class YourDivDiv extends Component {
                         <Slogan>your profile</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
-                    <ProfileTabs userId={this.state.username}/>
+                    <ProfileTabs/>
                 </Container>
             </div>
         );

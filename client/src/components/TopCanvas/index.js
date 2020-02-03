@@ -12,7 +12,7 @@ function TopCanvas(props) {
         <div className="topItem">
             <Container>
                 <Row>
-                    <Canvas canvasId="69" height="200px"/>
+                    <Canvas canvasId="69" size="200px" divSize="10px"/>
                 </Row>
                 <Row>
                     <div className="topCanvasTitle">
@@ -36,7 +36,7 @@ function TopCanvas(props) {
         <div className="topItem">
             <Container>
                 <Row>
-                    <Canvas canvasId="6969" height="200px"/>
+                    <Canvas canvasId="6969" size="200px" divSize="10px"/>
                 </Row>
                 <Row>
                     <div className="topCanvasTitle">
@@ -48,7 +48,7 @@ function TopCanvas(props) {
         <div className="topItem">
             <Container>
                 <Row>
-                    <Canvas canvasId="696969" height="200px"/>
+                    <Canvas canvasId="696969" size="200px" divSize="10px"/>
                 </Row>
                 <Row>
                     <div className="topCanvasTitle">
