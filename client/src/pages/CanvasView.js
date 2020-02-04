@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Col, Row, Container, FlexRow } from "../components/Grid";
 import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
-import Canvas from "../components/Canvas"
+import Canvas from "../components/Canvas";
+import CanvasBio from "../components/Canvas/CanvasBio";
 import API from "../utils/API";
 
 
@@ -50,14 +51,15 @@ class CanvasCreate extends Component {
                     </FlexRow>
                     <FlexRow>
                         <div className="col-md-6">
-                            <div className="canvasBio">
-                                {this.state.bio} 
-                            </div>
+                            <CanvasBio bio={this.state.bio}/>
                         </div>
                         <div className="col-md-6">
-                            <div className="createDivButton">
-                                support with a div
-                            </div>
+                            <Row>
+                                <button className="createDivButton">
+                                    add a div
+                                </button>
+                                <p>show your support</p>
+                            </Row>
                         </div>
                     </FlexRow>
                     <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none"/>
