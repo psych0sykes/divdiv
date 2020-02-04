@@ -6,20 +6,22 @@ import "./style.css";
 
 function CanvasCard (props) {
 
-
     return (
+        
         <div className="canvasCard">
-            <Container>
-                <Row>
-                    <Canvas canvasId={props.canvasId} size={props.size} divSize={props.divSize}/>
-                </Row>
-                <Row>
-                    <div className="canvasCardTitle">
-                        <h5>{props.canvasTitle}</h5>
-                    </div>
-                </Row>
-            </Container>
-        </div>
+            <a href={"/canvas/" + props.canvasId}>
+                <Container>
+                    <Row>
+                        <Canvas canvasId={props.canvasId} size={props.size} divSize={props.divSize}/>
+                    </Row>
+                    <Row>
+                        <div className="canvasCardTitle">
+                            <h5>{props.canvasTitle}</h5>
+                        </div>
+                    </Row>
+                </Container>
+            </a>
+        </div>   
     )
 }
 

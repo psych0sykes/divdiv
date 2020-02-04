@@ -10,6 +10,9 @@ router.route("/new")
 router.route("/find/user/:id")
   .get(canvasControllers.findCanvasByUser)
 
+router.route("/find/id/:id")
+  .get(canvasControllers.findCanvasById)
+
 router.route("/find/all")
   .get(canvasControllers.findAll)
 

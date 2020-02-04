@@ -14,6 +14,10 @@ export default {
     console.log("API " + id)
     return axios.get("/api/canvas/find/user/" + id);
   },
+  getCanvasById: function(id) {
+    console.log("API " + id)
+    return axios.get("/api/canvas/find/id/" + id);
+  },
   saveDiv: function(divObj) {
     console.log(divObj)
     return axios.post("/api/divs", divObj);
