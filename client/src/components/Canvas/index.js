@@ -13,6 +13,7 @@ function Canvas(props) {
     const styles = {
         width: "100%",
         height: props.size,
+        border: props.border
     }
 
     function populateCanvas(a){

@@ -31,7 +31,7 @@ class CanvasCreate extends Component {
                 <Container>
                     <FlexRow wrap="nowrap">
                         <Icon size="25"/>
-                        <Slogan>create your canvas</Slogan>
+                        <Slogan>create a canvas</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
                     <Row>

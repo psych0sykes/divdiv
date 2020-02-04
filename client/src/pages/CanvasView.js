@@ -11,7 +11,8 @@ class CanvasCreate extends Component {
 
     state = {
         username: "",
-        canvas_title: ""
+        canvas_title: "",
+        bio: "",
     }
 
     componentDidMount() {
@@ -30,11 +31,13 @@ class CanvasCreate extends Component {
     title = () => {
         API.getCanvasById(this.props.match.params.id)
         .then((res) => {
-            console.log(res.data.canvas_title)
-            this.setState({canvas_title: res.data.canvas_title})
+            console.log(res.data)
+            this.setState({
+                canvas_title: res.data.canvas_title,
+                bio: res.data.bio
+                })
         }).catch((err) => console.log(err));
     }
-
 
     render() {
         return(
@@ -45,7 +48,19 @@ class CanvasCreate extends Component {
                             <Slogan>{this.state.canvas_title}</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
-                    <Canvas canvasId={this.props.match.params.id} divSize="50px"/>
+                    <FlexRow>
+                        <div className="col-md-6">
+                            <div className="canvasBio">
+                                {this.state.bio} 
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="createDivButton">
+                                support with a div
+                            </div>
+                        </div>
+                    </FlexRow>
+                    <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none"/>
                 </Container>
             </div>
         );
