@@ -4,11 +4,15 @@ import "./style.css";
 
 function TopCanvas(props) {
 
+    function PopulateCards(props){
+        return  props.array.map((newCard) => 
+        <CanvasCard key={newCard._id} canvasId={newCard._id} size={props.size} divSize={props.divSize} canvasTitle={newCard.canvas_title}/>
+        )
+    };
+
     return(
     <div className="topCanvas">
-        <CanvasCard canvasId="69" size="200px" divSize="10px" canvasTitle="Food Pantry"/>
-        <CanvasCard canvasId="6969" size="200px" divSize="10px" canvasTitle="Koala Aid"/>
-        <CanvasCard canvasId="696969" size="200px" divSize="10px" canvasTitle="Save Walter White"/>
+        <PopulateCards array={props.array} size="200px" divSize="10px"/>
     </div>
     )
 }

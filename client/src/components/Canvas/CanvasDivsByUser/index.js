@@ -11,7 +11,6 @@ function CanvasDivsByUser(props) {
     const [canvasDivs,setCanvasDivs] = useState();
 
     const styles = {
-        width: props.width,
         height: props.height,
         overflow: "hidden",
         border: "2px solid black",

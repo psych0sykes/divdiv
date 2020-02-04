@@ -23,10 +23,10 @@ module.exports = {
       },
         findCanvas: function(req, res) {
           // console.log(req.params.id);
-          let fields = ["_id", "rgb_color", "canvas_id"]
+          let fields = ["canvas_id"]
 
         db.Canvas
-          .find({canvas_id: req.params.id})
+          .find({_id: req.params.id})
           .select(fields)
           .then(dbCanvas => {
             // console.log("canvas: " + dbCanvas)
@@ -35,6 +35,20 @@ module.exports = {
           .catch(err => res.status(422).json(err));
           
       },
+      findCanvasByUser: function(req, res) {
+        // console.log(req.params.id);
+        let fields = ["canvas_id"]
+
+
+      db.Canvas
+        .find({owner: req.params.id})
+        .then(dbCanvas => {
+          console.log("canvas: " + dbCanvas)
+          return res.json(dbCanvas)
+        })
+        .catch(err => res.status(422).json(err));
+        
+    },
         test: function(req, res) {
         res.json({message: "this is a test and you PASSED!"})
       }

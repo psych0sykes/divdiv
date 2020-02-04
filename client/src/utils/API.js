@@ -10,6 +10,10 @@ export default {
   getCanvasDivsByUser: function(id) {
     return axios.get("/api/divs/canvas/user/" + id);
   },
+  getCanvasByUser: function(id) {
+    console.log("API " + id)
+    return axios.get("/api/canvas/find/user/" + id);
+  },
   saveDiv: function(divObj) {
     console.log(divObj)
     return axios.post("/api/divs", divObj);

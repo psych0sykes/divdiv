@@ -7,18 +7,16 @@ import "./style.css";
 function Canvas(props) {
 
     const canvasId = props.canvasId;
-    const [divSize, setDivSize] = useState(props.divSize);
-    const [divStyle, setDivStyle] = useState({width: divSize, height: divSize, backgroundColor: "gray"});
-    const [canvasDivs,setCanvasDivs] = useState();
+    const divStyle = {width: props.divSize, height: props.divSize, backgroundColor: "gray"}
+    const [canvasDivs,setCanvasDivs] = useState(<div></div>);
 
     const styles = {
-        width: props.size,
+        width: "100%",
         height: props.size,
-        overflow: "hidden",
-        border: "2px solid black",
     }
 
     function populateCanvas(a){
+        console.log("populating canvas")
         return  a.map((newDiv) => 
         <div key={newDiv._id}>
         <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} Style={divStyle}>{newDiv.username}</_Div>
@@ -36,7 +34,7 @@ function Canvas(props) {
     
 
     return(
-    <div style={styles}>
+    <div className="canvasWrapper" style={styles}>
         <div className="canvas">
             {canvasDivs}
         </div>

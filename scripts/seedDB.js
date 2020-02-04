@@ -21,7 +21,7 @@ function getRandomColor() {
   return color;
 };
 
-function createSeed(number, campId, canvId, canvTitle) {
+function createSeed(number, canvId, canvTitle) {
 
     let donationTotal = 0
     let supportTotal = 0
@@ -62,9 +62,9 @@ function createSeed(number, campId, canvId, canvTitle) {
     return
 }
 
-createSeed(333, "69", "69", "333 divs");
-createSeed(2500, "6969", "6969", "2500 divs");
-createSeed(150, "696969", "696969","150 divs");
+createSeed(333, "5e362edd02a34659ea1dc487", "333 divs");
+createSeed(2500, "5e362edd02a34659ea1dc488", "2500 divs");
+createSeed(150, "5e362edd02a34659ea1dc489","150 divs");
 
 db.Div
   .remove({})
@@ -90,14 +90,14 @@ db.User
     process.exit(1);
   });
 
-db.Canvas
-  .remove({})
-  .then(() => db.Canvas.collection.insertMany(canvasSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Canvas
+//   .remove({})
+//   .then(() => db.Canvas.collection.insertMany(canvasSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
