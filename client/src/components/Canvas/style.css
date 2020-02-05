@@ -10,3 +10,12 @@
     overflow: hidden;
     border: 2px solid black;
 }
+.clickDiv{
+    overflow: hidden;
+}
+.clickDiv:hover {
+    position: relative;
+    cursor: pointer;
+    border: 5px solid white;
+
+}

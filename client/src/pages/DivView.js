@@ -14,7 +14,8 @@ class DivView extends Component {
         username: "",
         donation_amount: "",
         canvas_title: "",
-        message: "",   
+        message: "", 
+        canvas_id: ""  
     }
 
     componentDidMount() {
@@ -32,6 +33,7 @@ class DivView extends Component {
                 donation_amount: this.formatMoney(res.data.donation_amount,0,".",","),
                 canvas_title: res.data.canvas_title,
                 message: res.data.message,
+                canvas_id: res.data.canvas_id
                 })
         }).catch((err) => console.log(err));
     }
@@ -51,6 +53,10 @@ class DivView extends Component {
           console.log(e)
         }
       };
+    
+    toCanvas = () => {
+        window.location.assign("/canvas/" + this.state.canvas_id)
+    }
 
     render() {
         return(
@@ -65,9 +71,14 @@ class DivView extends Component {
                         <_Div RgbColor={this.state.rgb_color} divStyle={{width: "300px", height: "300px"}}/>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
-                        content
+                        <p>
+                            message: {this.state.message}
+                        </p>
                     </div>
                 </Row>
+                <FlexRow>
+                <button onClick={this.toCanvas}>go to canvas</button>
+                </FlexRow>
             </Container>
         )
     }

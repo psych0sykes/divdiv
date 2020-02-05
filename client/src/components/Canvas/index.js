@@ -26,8 +26,10 @@ function Canvas(props) {
     function populateCanvas(a){
         console.log("populating canvas")
         return  a.map((newDiv) => 
-        <div key={newDiv._id} onClick={() => divDirect(newDiv._id)} className={props.click ? "clickDiv" : ""}>
+        <div key={newDiv._id} onClick={() => divDirect(newDiv._id)}>
+            <div className={props.click ? "clickDiv" : ""}>
                 <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</_Div>
+            </div>
         </div>)
     };
 
