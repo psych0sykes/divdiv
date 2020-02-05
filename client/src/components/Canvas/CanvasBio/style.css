@@ -1,3 +1,25 @@
 .canvasBio p {
     color: #444444;
 }
+.bioButtonLabel {
+    display: flex;
+    align-items: center;
+}
+.bioButtonLabel p{
+    color: #444444;
+}
+.canvasScorecard {
+    justify-content: center;
+    margin: 10px;
+}
+.canvasScorecard p {
+    text-align: center;
+}
+.scorecardWrapper {
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(150, 69, 0, 0.3), 0 4px 8px 0 rgba(0, 0, 0, 0.02);
+}
