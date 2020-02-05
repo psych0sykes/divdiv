@@ -50,8 +50,8 @@ class App extends Component {
           <Route exact path="/canvas/:id" component={CanvasView}/>
           <Route exact path="/div/:id" component={DivView}/>
           </Switch>
-          <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
-          <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button>
+          {/* <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
+          <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button> */}
       </div>
       </Router>
     );

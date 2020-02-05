@@ -28,8 +28,13 @@ class Home extends Component {
                     </Row>
                     <FlexRow wrap="nowrap">
                         <Icon size="25"/>
-                        <Slogan>Company Slogan Goes Here</Slogan>
+                        <Slogan>petition support, visually.</Slogan>
                         <Icon size="25"/>
+                    </FlexRow>
+                    <FlexRow>
+                        <p>
+                            Get support for your petition with a dividv canvas.
+                        </p>
                     </FlexRow>
                     <Row>
                         <AboutDivDiv/>

@@ -9,7 +9,7 @@ export function Divs() {
 return (
     <div>
         <FlexRow>  
-            <CanvasDivsByUser width="300px" div="50px"/>
+            <CanvasDivsByUser width="300px" div="50px" click={true}/>
         </FlexRow>
     </div>
 )

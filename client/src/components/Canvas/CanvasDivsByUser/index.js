@@ -13,16 +13,25 @@ function CanvasDivsByUser(props) {
     const styles = {
         height: props.height,
         overflow: "hidden",
-        border: "2px solid black",
+        border: props.border
     }
 
     function populateCanvas(a){
         setDivStyle({width: props.div, height: props.div})
         return  a.map((newDiv) => 
-        <div key={newDiv._id}>
-        <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} Style={divStyle}>{newDiv.username}</_Div>
+        <div key={newDiv._id} onClick={() => divDirect(newDiv._id)}>
+            <div className={props.click ? "clickDiv" : ""}>
+                <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</_Div>
+            </div>
         </div>
     )};
+
+    function divDirect(id) {
+        console.log(id)
+        if(props.click){
+            window.location.assign("/div/" + id)
+        }
+    }
 
     useEffect(() => {
         const fetchData = async (id) => {
