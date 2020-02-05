@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import CanvasCreate from "./pages/CanvasCreate";
 import YourDivDiv from "./pages/YourDivDiv";
 import CanvasView from "./pages/CanvasView";
+import DivView from "./pages/DivView";
 import API from "./utils/API";
 
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/user/account" component={this.state.status ? YourDivDiv : SignUp}/>
           <Route exact path="/canvas/:id" component={CanvasView}/>
+          <Route exact path="/div/:id" component={DivView}/>
           </Switch>
           <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
           <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button>

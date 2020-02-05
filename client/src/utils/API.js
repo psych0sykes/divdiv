@@ -19,7 +19,7 @@ export default {
     return axios.get("/api/canvas/find/id/" + id);
   },
   getDivById: function(id) {
-    console.log("API " + id)
+    // console.log("API " + id)
     return axios.get("/api/divs/find/id/" + id);
   },
   saveDiv: function(divObj) {

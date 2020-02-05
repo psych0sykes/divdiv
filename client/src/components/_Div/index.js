@@ -5,8 +5,8 @@ function _Div(props) {
 
     const divStyle =
         {  
-            width: props.Style.width,
-            height: props.Style.height,
+            width: props.divStyle.width,
+            height: props.divStyle.height,
             backgroundColor: props.RgbColor
         };
 
