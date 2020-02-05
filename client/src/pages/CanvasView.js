@@ -59,6 +59,10 @@ class CanvasCreate extends Component {
           console.log(e)
         }
       };
+    
+    divForm = (id) => {
+        window.location.assign("/div/create/canvas/" + id)
+    }
 
     render() {
         return(
@@ -86,7 +90,7 @@ class CanvasCreate extends Component {
                             </div>
                             <FlexRow>
                                 <div className="bioButtonLabel">
-                                    <button className="createDivButton">
+                                    <button className="createDivButton" onClick={() => this.divForm(this.props.match.params.id)}>
                                         add a div
                                     </button>
                                 </div>

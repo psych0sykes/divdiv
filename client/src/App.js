@@ -7,6 +7,7 @@ import CanvasCreate from "./pages/CanvasCreate";
 import YourDivDiv from "./pages/YourDivDiv";
 import CanvasView from "./pages/CanvasView";
 import DivView from "./pages/DivView";
+import DivCreate from "./pages/DivCreate";
 import API from "./utils/API";
 
 
@@ -43,6 +44,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : SignUp}/>
+          <Route exact path="/div/create/canvas/:id" component={this.state.status ? DivCreate : SignUp}/>
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/user/account" component={this.state.status ? YourDivDiv : SignUp}/>
           <Route exact path="/canvas/:id" component={CanvasView}/>
