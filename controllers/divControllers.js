@@ -47,6 +47,20 @@ module.exports = {
           .catch(err => res.status(422).json(err));
           
       },
+      findDivById: function(req, res) {
+        console.log(req.params.id);
+        let fields = ["_id", "rgb_color", "canvas_id"]
+
+      db.Div
+        .findOne({_id: req.params.id})
+        // .select(fields)
+        .then(dbDiv => {
+          // console.log("canvas: " + dbDiv)
+          return res.json(dbDiv)
+        })
+        .catch(err => res.status(422).json(err));
+        
+    },
         test: function(req, res) {
         res.json({message: "this is a test and you PASSED!"})
       }

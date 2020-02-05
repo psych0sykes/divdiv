@@ -94,7 +94,7 @@ class CanvasCreate extends Component {
                             </FlexRow>
                         </div>
                     </FlexRow>
-                    <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none"/>
+                    <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none" click={true}/>
                 </Container>
             </div>
         );

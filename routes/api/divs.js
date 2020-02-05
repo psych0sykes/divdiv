@@ -7,6 +7,9 @@ router.route("/canvas/:id")
 router.route("/canvas/user/:id")
   .get(divControllers.findCanvasByUser)
 
+router.route("/find/:id")
+  .get(divControllers.findDivById)
+
 router.route("/")
   .get(divControllers.findAll)
   .post(divControllers.newDiv)

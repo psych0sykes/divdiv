@@ -16,11 +16,21 @@ function Canvas(props) {
         border: props.border
     }
 
+    function divDirect(event) {
+        console.log("click")
+        if(!props.click){
+            event.preventDefault()
+            // window.location.assign("/div/" + )
+        }
+    }
+
     function populateCanvas(a){
         console.log("populating canvas")
         return  a.map((newDiv) => 
         <div key={newDiv._id}>
-        <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} Style={divStyle}>{newDiv.username}</_Div>
+            <a onClick={divDirect} href={"/div/" + newDiv._id}>
+                <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} Style={divStyle}>{newDiv.username}</_Div>
+            </a>
         </div>)
     };
 
