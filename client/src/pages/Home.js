@@ -12,7 +12,7 @@ class Home extends Component {
 
         const topCanvases = [
             {_id: "5e362edd02a34659ea1dc487",
-            canvas_title: "Food Pantry",
+            canvas_title: "Bread Mods - Modular Synthesis",
             },
             {_id: "5e362edd02a34659ea1dc488",
             canvas_title: "Save Walter White"},
@@ -28,7 +28,7 @@ class Home extends Component {
                     </Row>
                     <FlexRow wrap="nowrap">
                         <Icon size="25"/>
-                        <Slogan>petition support, visually.</Slogan>
+                        <Slogan>petition support and fundraise, visually.</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
                     <FlexRow>

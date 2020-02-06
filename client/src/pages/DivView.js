@@ -71,9 +71,12 @@ class DivView extends Component {
                         <_Div RgbColor={this.state.rgb_color} divStyle={{width: "300px", height: "300px"}}/>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
-                        <p>
-                            message: {this.state.message}
-                        </p>
+                            <p>
+                                message: {this.state.message}
+                            </p>
+                            <p>
+                                donation amount: ${this.state.donation_amount}
+                            </p>
                     </div>
                 </Row>
                 <FlexRow>
