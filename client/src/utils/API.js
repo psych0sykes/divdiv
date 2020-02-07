@@ -22,6 +22,10 @@ export default {
     // console.log("API " + id)
     return axios.get("/api/divs/find/id/" + id);
   },
+  getUserByName: function(username) {
+    // console.log("API " + id)
+    return axios.get("/api/user/find/name/" + username);
+  },
   saveDiv: function(divObj) {
     console.log(divObj)
     return axios.post("/api/divs", divObj);

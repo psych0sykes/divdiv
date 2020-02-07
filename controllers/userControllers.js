@@ -7,6 +7,14 @@ module.exports = {
         .then(newUser => res.json(newUser))
         .catch(err => res.status(422).json(err));
 
+    },
+    findUserByName: function (req, res) {
+        db.User
+            .findOne({username: req.params.username})
+            .then(user => {
+                return res.json(user)
+            })
+            .catch(err => res.status(422).json(err));
     }
 }
 

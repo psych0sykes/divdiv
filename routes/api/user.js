@@ -3,6 +3,9 @@ const userControllers = require("../../controllers/userControllers");
 const passport = require("passport");
 
 
+router.route("/find/name/:username")
+  .get(userControllers.findUserByName)
+
 router.route("/login/local")
   .post(passport.authenticate('local'), function(req, res){
     // console.log(req);

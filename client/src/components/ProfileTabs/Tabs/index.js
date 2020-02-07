@@ -26,14 +26,45 @@ export function Canvases(props) {
             // console.log(result.data)
             setCanvases(result.data);
         }
-        fetchData(props.username)
+        fetchData(props.username);
       }, []);
 
-    return  <div>
+    return  (<div>
                 <TopCanvas array={canvases}/>
-            </div>;
+            </div>);
 }
   export function Account(props) {
-  return <div>Account {props.username}</div>;
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+
+        const fetchData = async (username) => {
+            const result = await API.getUserByName(username).catch(err => console.log(err));
+            console.log(result.data)
+            setUser(result.data);
+        }
+        fetchData(props.username);
+    }, []);
+
+
+  return    (<div>
+                <FlexRow>
+                    <div className="col-md-6 justify-content-end d-flex">
+                        <p>username:</p>
+                    </div>
+                    <div className="col-md-6 justify-content-start d-flex">
+                        <p></p>
+                    </div>
+                </FlexRow>
+                <FlexRow>
+                    <div className="col-md-6 justify-content-end d-flex">
+                        
+                    </div>
+                    <div className="col-md-6 justify-content-start d-flex">
+                        
+                    </div>
+                </FlexRow>
+             </div>);
 }
 
