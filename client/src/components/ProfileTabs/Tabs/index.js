@@ -51,18 +51,34 @@ export function Canvases(props) {
   return    (<div>
                 <FlexRow>
                     <div className="col-md-6 justify-content-end d-flex">
-                        <p>username:</p>
+                        <p>username</p>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
-                        <p></p>
+                        <p>{user.username}</p>
                     </div>
                 </FlexRow>
                 <FlexRow>
                     <div className="col-md-6 justify-content-end d-flex">
-                        
+                        <p>email</p>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
-                        
+                        <p>{user.email}</p>
+                    </div>
+                </FlexRow>
+                <FlexRow>
+                    <div className="col-md-6 justify-content-end d-flex">
+                        <p>first name</p>
+                    </div>
+                    <div className="col-md-6 justify-content-start d-flex">
+                        <p>{user.first_name}</p>
+                    </div>
+                </FlexRow>
+                <FlexRow>
+                    <div className="col-md-6 justify-content-end d-flex">
+                        <p>last name</p>
+                    </div>
+                    <div className="col-md-6 justify-content-start d-flex">
+                        <p>{user.last_name}</p>
                     </div>
                 </FlexRow>
              </div>);

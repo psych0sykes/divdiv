@@ -8,19 +8,22 @@ function DivForm(props) {
 
     const [color, setColor] = useState();
     const [message, setMessage] = useState();
+    const [donation, setDonation] = useState();
 
     const handleFormSubmit = event => {
         event.preventDefault();
 
         console.log("submitting new div");
-        //   API.saveCanvas({
-        //     canvas_title: canvasTitle,
-        //     owner: props.username,
-        //     bio: bio,
-        //     canvas_id: "test"
-        //     })
-        //     .then()
-        //     .catch(err => console.log(err))
+          API.saveDiv({
+            rgb_color: color,
+            message: message,
+            username: props.username,
+            donation_amount: donation,
+            canvas_id: props.canvas_id,
+            canvas_title: props.canvas_title
+            })
+            .then( window.location.assign("/canvas/" + props.canvas_id))
+            .catch(err => console.log(err))
         };
 
     return(
@@ -37,6 +40,21 @@ function DivForm(props) {
                                 </h4>
                                 <p>
                                     Pick your color
+                                </p>
+                            </div>
+                        </div>
+                    </Row>
+                    <Row>
+                        <div className="col-md-6 justify-content-end d-flex">
+                            <input onChange={event => setDonation(event.target.value)} name="donation" placeholder="donation"/>
+                        </div>
+                        <div className="col-md-6 justify-content-start d-flex">
+                            <div className="formHelp">
+                                <h4>
+                                    donation
+                                </h4>
+                                <p>
+                                    Contribute to the {props.canvas_title} canvas
                                 </p>
                             </div>
                         </div>

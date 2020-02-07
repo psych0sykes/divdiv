@@ -10,9 +10,11 @@ router.route("/canvas/user/:id")
 router.route("/find/id/:id")
   .get(divControllers.findDivById)
 
+router.route("/create/:canvas_title/:id")
+  .post(divControllers.newDiv)
+
 router.route("/")
   .get(divControllers.findAll)
-  .post(divControllers.newDiv)
 
 
 

@@ -35,7 +35,7 @@ class CanvasCreate extends Component {
                         <Icon size="25"/>
                     </FlexRow>
                     <Row>
-                        <DivForm username={this.state.username}/>
+                        <DivForm username={this.state.username} canvas_id={this.props.match.params.id} canvas_title={this.props.match.params.canvas_title}/>
                     </Row>
                 </Container>
             </div>

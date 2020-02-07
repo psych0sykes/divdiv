@@ -28,7 +28,7 @@ export default {
   },
   saveDiv: function(divObj) {
     console.log(divObj)
-    return axios.post("/api/divs", divObj);
+    return axios.post("/api/divs/create/:canvas_title/:id", divObj);
   },
   saveCanvas: function(canvObj) {
     console.log(canvObj)

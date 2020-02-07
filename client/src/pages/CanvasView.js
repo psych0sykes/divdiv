@@ -61,7 +61,7 @@ class CanvasCreate extends Component {
       };
     
     divForm = (id) => {
-        window.location.assign("/div/create/canvas/" + id)
+        window.location.assign("/div/create/canvas/" + this.state.canvas_title + "/" + id)
     }
 
     render() {

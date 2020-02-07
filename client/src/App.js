@@ -44,7 +44,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : SignUp}/>
-          <Route exact path="/div/create/canvas/:id" component={this.state.status ? DivCreate : SignUp}/>
+          <Route exact path="/div/create/canvas/:canvas_title/:id" component={this.state.status ? DivCreate : SignUp}/>
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/user/account" component={this.state.status ? YourDivDiv : SignUp}/>
           <Route exact path="/canvas/:id" component={CanvasView}/>
