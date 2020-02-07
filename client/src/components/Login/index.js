@@ -6,7 +6,7 @@ import "./style.css";
 
 function Login(props) {
 
-    const style = {display: props.display}
+    const style = {display: props.display};
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
