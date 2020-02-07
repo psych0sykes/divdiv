@@ -1,3 +1,5 @@
+function SeedDB() {
+
 const mongoose = require("mongoose");
 const db = require("../models");
 
@@ -101,3 +103,7 @@ db.User
 //     console.error(err);
 //     process.exit(1);
 //   });
+
+};
+
+SeedDB();
