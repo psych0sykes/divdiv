@@ -21,7 +21,7 @@ module.exports = {
       },
         findCanvas: function(req, res) {
           console.log(req.params.id);
-          let fields = ["_id", "rgb_color", "canvas_id"]
+          let fields = ["_id", "rgb_color", "canvas_id", "donation_amount"]
 
         db.Div
           .find({canvas_id: req.params.id})

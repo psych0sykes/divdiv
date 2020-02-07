@@ -38,8 +38,6 @@ class CanvasCreate extends Component {
             this.setState({
                 canvas_title: res.data.canvas_title,
                 bio: res.data.bio,
-                support_total: res.data.support_total,
-                donation_total: this.formatMoney(res.data.donation_total,0,".",",")
                 })
         }).catch((err) => console.log(err));
     }
@@ -64,6 +62,14 @@ class CanvasCreate extends Component {
         window.location.assign("/div/create/canvas/" + this.state.canvas_title + "/" + id)
     }
 
+    donation_total = (value) => {
+        this.setState({donation_total: value})
+    }
+
+    support_total = (value) => {
+        this.setState({support_total: value})
+    }
+
     render() {
         return(
             <div>
@@ -84,7 +90,7 @@ class CanvasCreate extends Component {
                                     <p>supporters</p>
                                 </div>
                                 <div className="canvasScorecard">
-                                    <h1>${this.state.donation_total}</h1>
+                                    <h1>${this.formatMoney(this.state.donation_total,0,".",",")}</h1>
                                     <p>funds raised</p>
                                 </div>
                             </div>
@@ -98,7 +104,7 @@ class CanvasCreate extends Component {
                             </FlexRow>
                         </div>
                     </FlexRow>
-                    <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none" click={true}/>
+                    <Canvas canvasId={this.props.match.params.id} divSize="75px" border="none" click={true} donationTotal={this.donation_total} supportTotal={this.support_total}/>
                 </Container>
             </div>
         );
