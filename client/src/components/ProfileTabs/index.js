@@ -4,12 +4,12 @@ import {Divs, Canvases, Account} from "./Tabs";
 import "./style.css";
 
 
-function ProfileTabs() {
+function ProfileTabs(props) {
 
-    const [tab, setTab] = useState(<Divs/>);
-    const tabDivs = () => setTab(<Divs/>);
-    const tabCanvases = () => setTab(<Canvases/>);
-    const tabAccount = () => setTab(<Account/>);
+    const [tab, setTab] = useState(<Divs username={props.username}/>);
+    const tabDivs = () => setTab(<Divs username={props.username}/>);
+    const tabCanvases = () => setTab(<Canvases username={props.username}/>);
+    const tabAccount = () => setTab(<Account username={props.username}/>);
 
     const Populate = () => {
         return tab

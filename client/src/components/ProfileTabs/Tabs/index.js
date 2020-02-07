@@ -5,7 +5,7 @@ import TopCanvas from "../../TopCanvas";
 import API from "../../../utils/API";
 import "./style.css";
 
-export function Divs() {
+export function Divs(props) {
 return (
     <div>
         <FlexRow>  
@@ -14,7 +14,7 @@ return (
     </div>
 )
 }
-export function Canvases() {
+export function Canvases(props) {
 
     const [canvases, setCanvases] = useState([]);
 
@@ -26,23 +26,14 @@ export function Canvases() {
             // console.log(result.data)
             setCanvases(result.data);
         }
-
-        const status = async () => {
-            const result = await API.loggedIn()
-            .then((res) => {
-              console.log(res.data.username)
-              fetchData(res.data.username)})
-            .catch((err) => console.log(err));
-        }
-        
-        status();
+        fetchData(props.username)
       }, []);
 
     return  <div>
                 <TopCanvas array={canvases}/>
             </div>;
 }
-  export function Account() {
-    return <div>Account</div>;
+  export function Account(props) {
+  return <div>Account {props.username}</div>;
 }
 

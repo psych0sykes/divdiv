@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Container, FlexRow } from "../components/Grid";
+import { Container, FlexRow } from "../components/Grid";
 import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
 import Canvas from "../components/Canvas";
