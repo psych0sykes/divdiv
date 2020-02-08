@@ -9,23 +9,23 @@
 }
 
 @keyframes moveIcon {
-    0% {    opacity: 0%;
+    0% {    opacity: 0;
             left: 90px;
             bottom: 30px;
             top: 0px;
         }
 
-    10% {   opacity: 100%;
+    10% {   opacity: 1;
             left: 90px;
             bottom: 30px;
             top: 0px;
         }
-    90% {   opacity: 100%;
+    90% {   opacity: 1;
             left: 30px;
             top: 30px;
             bottom: 0px;
         }
-    100%{   opacity: 0%;
+    100%{   opacity: 0;
             left: 30px;
             top: 30px;
             bottom: 0px;
