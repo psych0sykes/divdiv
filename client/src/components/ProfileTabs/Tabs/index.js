@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import CanvasDivsByUser from "../../Canvas/CanvasDivsByUser";
 import {FlexRow} from "../../Grid";
 import TopCanvas from "../../TopCanvas";
+import { CenterItem } from "../../Section";
 import API from "../../../utils/API";
 import "./style.css";
+
 
 export function Divs(props) {
 return (
@@ -49,38 +51,9 @@ export function Canvases(props) {
 
 
   return    (<div>
-                <FlexRow>
-                    <div className="col-md-6 justify-content-end d-flex">
-                        <p>username</p>
-                    </div>
-                    <div className="col-md-6 justify-content-start d-flex">
-                        <p>{user.username}</p>
-                    </div>
-                </FlexRow>
-                <FlexRow>
-                    <div className="col-md-6 justify-content-end d-flex">
-                        <p>email</p>
-                    </div>
-                    <div className="col-md-6 justify-content-start d-flex">
-                        <p>{user.email}</p>
-                    </div>
-                </FlexRow>
-                <FlexRow>
-                    <div className="col-md-6 justify-content-end d-flex">
-                        <p>first name</p>
-                    </div>
-                    <div className="col-md-6 justify-content-start d-flex">
-                        <p>{user.first_name}</p>
-                    </div>
-                </FlexRow>
-                <FlexRow>
-                    <div className="col-md-6 justify-content-end d-flex">
-                        <p>last name</p>
-                    </div>
-                    <div className="col-md-6 justify-content-start d-flex">
-                        <p>{user.last_name}</p>
-                    </div>
-                </FlexRow>
+                <CenterItem left={"username"} right={user.username}/>
+                <CenterItem left={"email"} right={user.email}/>
+                <CenterItem left={"name"} right={user.first_name + " " + user.last_name}/>
              </div>);
 }
 

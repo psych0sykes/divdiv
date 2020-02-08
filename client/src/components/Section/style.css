@@ -5,3 +5,11 @@
     font-size: 35px;
     font-weight: bold;
 }
+.centerItemTitle {
+    font-size: larger;
+    color: #666666;
+}
+.centerItemCaption {
+    font-size: medium;
+    color: black;
+}
