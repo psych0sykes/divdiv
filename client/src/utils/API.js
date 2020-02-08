@@ -4,6 +4,10 @@ export default {
   getDivs: function() {
     return axios.get("/api/divs");
   },
+  getCanvasAll: function() {
+    // console.log("API")
+    return axios.get("/api/canvas/all");
+  },
   getCanvasDivsArray: function(id) {
     return axios.get("/api/divs/canvas/" + id);
   },

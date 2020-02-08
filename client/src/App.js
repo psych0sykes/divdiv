@@ -8,9 +8,8 @@ import YourDivDiv from "./pages/YourDivDiv";
 import CanvasView from "./pages/CanvasView";
 import DivView from "./pages/DivView";
 import DivCreate from "./pages/DivCreate";
+import CanvasBrowse from "./pages/CanvasBrowse";
 import API from "./utils/API";
-
-
 
 class App extends Component {
 
@@ -43,6 +42,7 @@ class App extends Component {
           <Nav status={this.state.status} loggedIn={this.status} displayLogin={this.state.displayLogin} setDisplayLogin={this.setDisplayLogin}/>
           <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/canvas/browse" component={CanvasBrowse}/>
           <Route exact path="/canvas/create" component={this.state.status ? CanvasCreate : SignUp}/>
           <Route exact path="/div/create/canvas/:canvas_title/:id" component={this.state.status ? DivCreate : SignUp}/>
           <Route exact path="/signup" component={SignUp}/>

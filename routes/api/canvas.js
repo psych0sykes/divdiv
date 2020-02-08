@@ -13,7 +13,7 @@ router.route("/find/user/:id")
 router.route("/find/id/:id")
   .get(canvasControllers.findCanvasById)
 
-router.route("/find/all")
+router.route("/all")
   .get(canvasControllers.findAll)
 
 

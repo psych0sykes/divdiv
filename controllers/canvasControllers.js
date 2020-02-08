@@ -3,11 +3,10 @@ const db = require("../models");
 
 module.exports = {
         findAll: function(req, res) {
-          // console.log("findAll: " + req.params)
         db.Canvas
           .find({})
-          .select()
           .then(canvas => {
+            console.log("API")
             return res.json(canvas)
           })
           .catch(err => res.status(422).json(err));

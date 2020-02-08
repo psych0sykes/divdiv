@@ -15,13 +15,19 @@ export function Slogan({children}) {
 
 export function CenterItem({left, right}) {
   return (
-          <FlexRow>
-              <div className="col-md-6 justify-content-end d-flex">
+          <FlexRow wrap="noWrap">
+              <div className="col-sm-6 justify-content-end d-flex">
                   <div className="centerItemTitle">{left}</div>
               </div>
-              <div className="col-md-6 justify-content-start d-flex">
+              <div className="col-sm-6 justify-content-start d-flex">
                   <div className="centerItemCaption">{right}</div>
               </div>
           </FlexRow>
+  )
+}
+
+export function Spacer(props) {
+  return (
+      <div className="sectionSpacer" style={{height: props.space}}></div>
   )
 }
