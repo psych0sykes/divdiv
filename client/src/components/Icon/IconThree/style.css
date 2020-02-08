@@ -5,7 +5,7 @@
 }
 .insertIcon {
     position: relative;
-    animation: moveIcon 2s infinite ease-in-out;
+    animation: moveIcon 2s ease-in-out infinite ;
 }
 
 @keyframes moveIcon {
