@@ -23,12 +23,9 @@ class Home extends Component {
         return(
             <div>
                 <Container>
-                    <Row>
-                        <TopCanvas array={topCanvases}/>
-                    </Row>
                     <FlexRow wrap="nowrap">
                         <Icon size="25"/>
-                        <Slogan>petition support and fundraise, visually.</Slogan>
+                            <Slogan>petition support and fundraise, visually.</Slogan>
                         <Icon size="25"/>
                     </FlexRow>
                     <FlexRow>
@@ -36,6 +33,9 @@ class Home extends Component {
                             Get support for your petition with a dividv canvas.
                         </p>
                     </FlexRow>
+                    <Row>
+                        <TopCanvas array={topCanvases}/>
+                    </Row>
                     <Row>
                         <AboutDivDiv/>
                     </Row>

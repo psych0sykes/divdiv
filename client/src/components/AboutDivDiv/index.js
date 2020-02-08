@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {Row, Container, Col} from "../Grid";
+import {CenterItem, Slogan} from "../Section";
+import Icon from "../Icon";
+import IconThree from "../Icon/IconThree";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -8,14 +11,7 @@ function AboutDivDiv(props) {
     return(
     <div className="aboutDivDiv">
         <Container>
-            <Row>
-                <Col size="4">
-                    icons go here in this col
-                </Col>
-                <Col size="8">
-                    words and bullet points will go in this col
-                </Col>
-            </Row>   
+            <CenterItem left={<Slogan>donate with a div</Slogan>} right={<IconThree size="50px"/>}/>
         </Container>
     </div>
     )
