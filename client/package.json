@@ -5,7 +5,9 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.19.1",
+    "huebee": "^2.0.0",
     "react": "^16.6.3",
+    "react-color": "^2.18.0",
     "react-dom": "^16.6.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",

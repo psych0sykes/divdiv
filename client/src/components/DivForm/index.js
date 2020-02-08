@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { CompactPicker } from 'react-color';
 import {Row, Container, FlexRow} from "../Grid";
+import {Spacer} from "../Section";
 import {SubmitButton} from "../Form";
 import API from "../../utils/API";
 import "./style.css";
@@ -31,7 +33,7 @@ function DivForm(props) {
             <form onSubmit={handleFormSubmit}>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
-                            <input onChange={event => setColor(event.target.value)} type="text" name="rgb_color" placeholder="div color"/>
+                            <CompactPicker style={{boxShadow: "none"}}color={color} onChangeComplete={newColor => setColor(newColor.hex)}/>
                         </div>
                         <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
@@ -42,8 +44,10 @@ function DivForm(props) {
                                     Pick your color
                                 </p>
                             </div>
+                            <div className="checkTheDiv" style={{backgroundColor: color}}/>
                         </div>
                     </Row>
+                    <Spacer space="20px"/>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
                             <input onChange={event => setDonation(event.target.value)} name="donation" placeholder="donation"/>

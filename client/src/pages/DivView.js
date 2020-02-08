@@ -66,19 +66,30 @@ class DivView extends Component {
                     <Slogan>{this.state.username}'s div from {this.state.canvas_title}</Slogan>
                     <Icon size="25"/>
                 </FlexRow>
-                <Row>
+                <FlexRow wrap="noWrap">
                     <div className="col-md-6 justify-content-end d-flex">
-                        <_Div RgbColor={this.state.rgb_color} divStyle={{width: "300px", height: "300px"}}/>
+                        <_Div RgbColor={this.state.rgb_color} divStyle={{width: "175px", height: "175px"}}/>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
-                            <p>
-                                message: {this.state.message}
-                            </p>
-                            <p>
-                                donation amount: ${this.state.donation_amount}
-                            </p>
+                        <table>
+                                <tr>
+                                    <td>
+                                        username: {this.state.username}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        message: {this.state.message}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        donation amount: ${this.state.donation_amount}
+                                    </td>
+                                </tr>
+                        </table>
                     </div>
-                </Row>
+                </FlexRow>
                 <FlexRow>
                 <button onClick={this.toCanvas}>go to canvas</button>
                 </FlexRow>

@@ -13,7 +13,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
         newDiv: function(req, res) {
-          console.log(req);
+          console.log(req.body);
         db.Div
           .create(req.body)
           .then(createdDiv => res.json(createdDiv))

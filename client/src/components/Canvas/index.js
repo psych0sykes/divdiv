@@ -18,7 +18,7 @@ function Canvas(props) {
     }
 
     function divDirect(id) {
-        console.log(id)
+        // console.log(id)
         if(props.click){
             window.location.assign("/div/" + id)
         }

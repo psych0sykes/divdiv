@@ -31,23 +31,23 @@ export default {
     return axios.get("/api/user/find/name/" + username);
   },
   saveDiv: function(divObj) {
-    console.log(divObj)
+    // console.log(divObj)
     return axios.post("/api/divs/create/:canvas_title/:id", divObj);
   },
   saveCanvas: function(canvObj) {
-    console.log(canvObj)
+    // console.log(canvObj)
     return axios.post("/api/canvas/new", canvObj);
   },
   saveUser: function(userObj) {
-    console.log(userObj)
+    // console.log(userObj)
     return axios.post("/api/user/new", userObj);
   },
   login: function(creds) {
-    console.log(creds)
+    // console.log(creds)
     return axios.post("/api/user/login/local", creds);
   },
   logout: function(req) {
-    console.log("out")
+    // console.log("out")
     return axios.get("/api/user/logout", req);
   },
   loggedIn: function(req) {
