@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')("sk_test_0tS3rAobuOiAbun1KCzvcpG800z4PZg751");
 const endpointSecret = process.env.STRIPE_WEBHOOK_SIGNATURE;
 
 app.post('/api/webhook', bodyParser.raw({type: 'application/json'}), (request, response) => {

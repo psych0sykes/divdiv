@@ -96,14 +96,14 @@ function DivForm(props) {
                         </div>
                     </Row>
                     <FlexRow>
-                        <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" >
-                            <Checkout />
-                        </StripeProvider>
-                    </FlexRow>
-                    <FlexRow>
                         <SubmitButton>create div</SubmitButton>
                     </FlexRow>
             </form>
+                    <FlexRow>
+                        {/* <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" > */}
+                            <Checkout />
+                        {/* </StripeProvider> */}
+                    </FlexRow>
         </Container>
     );
 }

@@ -18,10 +18,10 @@ class CheckoutForm extends React.Component {
                     })
                   });
 
-  handleSubmit = async (ev) => {
+  handleSubmit = (event) => {
     // We don't want to let default form submission happen here, which would refresh the page.
-    ev.preventDefault();
-    await this.intent().then(() => {
+    event.preventDefault();
+    this.intent().then(() => {
     // See our confirmCardPayment documentation for more:
     // https://stripe.com/docs/stripe-js/reference#stripe-confirm-card-payment
     this.props.stripe.confirmCardPayment(this.state.published, {

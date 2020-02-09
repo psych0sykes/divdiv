@@ -9,6 +9,7 @@ import CanvasView from "./pages/CanvasView";
 import DivView from "./pages/DivView";
 import DivCreate from "./pages/DivCreate";
 import CanvasBrowse from "./pages/CanvasBrowse";
+import {StripeProvider} from 'react-stripe-elements';
 import API from "./utils/API";
 
 class App extends Component {
@@ -38,7 +39,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div>
+      <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" >
+        <div>
           <Nav status={this.state.status} loggedIn={this.status} displayLogin={this.state.displayLogin} setDisplayLogin={this.setDisplayLogin}/>
           <Switch>
           <Route exact path="/" component={Home} />
@@ -52,7 +54,8 @@ class App extends Component {
           </Switch>
           {/* <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
           <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button> */}
-      </div>
+        </div>
+      </StripeProvider>
       </Router>
     );
   }
