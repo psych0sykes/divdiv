@@ -22,24 +22,28 @@ class CheckoutForm extends React.Component {
   //   })
 
   intent = () => API.createPaymentIntent({})
-                  .then((data) => console.log(data));
+                  .then((data) => {
+                    this.setState({
+                      published: data.data.clientSecret
+                    })
+                  });
 
 
 
-  handleSubmit = (ev) => {
+  handleSubmit = async (ev) => {
     // We don't want to let default form submission happen here, which would refresh the page.
     ev.preventDefault();
-    this.intent()
+    await this.intent().then(() => {
     // See our confirmCardPayment documentation for more:
     // https://stripe.com/docs/stripe-js/reference#stripe-confirm-card-payment
-    this.props.stripe.confirmCardPayment('sk_test_0tS3rAobuOiAbun1KCzvcpG800z4PZg751', {
+    this.props.stripe.confirmCardPayment(this.state.published, {
       payment_method: {
         card: this.props.elements.getElement('card'),
         billing_details: {
           name: 'Jenny Rosen',
         },
       }
-    });
+    })});
   };
 
   render() {

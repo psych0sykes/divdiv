@@ -4,7 +4,7 @@ const routes = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
@@ -24,7 +24,39 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const stripe = require('stripe')('sk_test_0tS3rAobuOiAbun1KCzvcpG800z4PZg751');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const endpointSecret = process.env.STRIPE_WEBHOOK_SIGNATURE;
+
+app.post('/api/webhook', bodyParser.raw({type: 'application/json'}), (request, response) => {
+  let event;
+
+  console.log(request.body)
+
+  try {
+    event = request.body;
+  } catch (err) {
+    response.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  // Handle the event
+  switch (event.type) {
+    case 'payment_intent.succeeded':
+      const paymentIntent = event.data.object;
+      console.log('PaymentIntent was successful!')
+      break;
+    case 'payment_method.attached':
+      const paymentMethod = event.data.object;
+      console.log('PaymentMethod was attached to a Customer!')
+      break;
+    // ... handle other event types
+    default:
+      // Unexpected event type
+      return response.status(400).end();
+  }
+
+  // Return a 200 response to acknowledge receipt of the event
+  response.json({received: true});
+});
 
 app.post("/api/create-payment-intent", async (req, res) => {
   console.log("create payment intent is working...")
