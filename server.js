@@ -24,6 +24,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+const stripe = require('stripe')('sk_test_0tS3rAobuOiAbun1KCzvcpG800z4PZg751');
+
+app.post("/api/create-payment-intent", async (req, res) => {
+  console.log("create payment intent is working...")
+  // const { items, currency } = req.body;
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: 100,
+    currency: "usd"
+  });
+
+  // Send publishable key and PaymentIntent details to client
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    clientSecret: paymentIntent.client_secret
+  });
+});
+
 passport.use(new LocalStrategy(
   function(username, password, done) {
     db.User.findOne({ username: username }, function(err, user) {

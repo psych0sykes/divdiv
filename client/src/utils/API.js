@@ -52,6 +52,9 @@ export default {
   },
   loggedIn: function(req) {
     return axios.get("/api/user/in");
+  },
+  createPaymentIntent: function(req) {
+    return axios.post("/api/create-payment-intent");
   }
 
 };
