@@ -9,8 +9,6 @@ import CanvasView from "./pages/CanvasView";
 import DivView from "./pages/DivView";
 import DivCreate from "./pages/DivCreate";
 import CanvasBrowse from "./pages/CanvasBrowse";
-import {StripeProvider} from 'react-stripe-elements';
-import Checkout from "./components/Checkout";
 import API from "./utils/API";
 
 class App extends Component {
@@ -41,9 +39,6 @@ class App extends Component {
     return (
       <Router>
       <div>
-          <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" >
-            <Checkout />
-          </StripeProvider>
           <Nav status={this.state.status} loggedIn={this.status} displayLogin={this.state.displayLogin} setDisplayLogin={this.setDisplayLogin}/>
           <Switch>
           <Route exact path="/" component={Home} />

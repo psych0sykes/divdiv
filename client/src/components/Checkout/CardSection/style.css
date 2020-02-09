@@ -2,15 +2,14 @@
 * Shows how you can use CSS to style your Element's container.
 */
 .MyCardElement {
-    height: 40px;
-    padding: 10px 12px;
+    height: 35px;
+    padding: 5px;
     width: 275px;
     color: #32325d;
     background-color: white;
-    border: 1px solid transparent;
-    border-radius: 4px;
-  
-    box-shadow: 0 1px 3px 0 #e6ebf1;
+    border: 2px solid black;
+    box-shadow: 3px 3px gray;
+    margin: 5px;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
   }

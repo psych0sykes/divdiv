@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { CompactPicker } from 'react-color';
-import {Row, Container, FlexRow} from "../Grid";
+import {Row, Container, FlexRow, Col} from "../Grid";
 import {Spacer} from "../Section";
 import {SubmitButton} from "../Form";
+import {StripeProvider} from 'react-stripe-elements';
+import Checkout from "../Checkout";
 import API from "../../utils/API";
 import "./style.css";
 
 function DivForm(props) {
 
-    const [color, setColor] = useState();
+    const [color, setColor] = useState("#ff0000");
     const [message, setMessage] = useState();
     const [donation, setDonation] = useState();
+    const [displayPicker, setDisplayPicker] = useState();
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -28,12 +31,26 @@ function DivForm(props) {
             .catch(err => console.log(err))
         };
 
+    const showPicker = () => {
+
+    }
+
     return(
         <Container>
             <form onSubmit={handleFormSubmit}>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
-                            <CompactPicker style={{boxShadow: "none"}}color={color} onChangeComplete={newColor => setColor(newColor.hex)}/>
+                            <div>
+                            <Row>
+                                <input value={color} onChange={event => setColor(event.target.value)}/>
+                            </Row>
+                            <Spacer space="20px"/>
+                            <Row>
+                                <div>
+                                <CompactPicker className="colorPicker" color={color} onChangeComplete={newColor => setColor(newColor.hex)}/>
+                                </div>
+                            </Row>
+                            </div>
                         </div>
                         <div className="col-md-6 justify-content-start d-flex">
                             <div className="formHelp">
@@ -50,21 +67,6 @@ function DivForm(props) {
                     <Spacer space="20px"/>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
-                            <input onChange={event => setDonation(event.target.value)} name="donation" placeholder="donation"/>
-                        </div>
-                        <div className="col-md-6 justify-content-start d-flex">
-                            <div className="formHelp">
-                                <h4>
-                                    donation
-                                </h4>
-                                <p>
-                                    Contribute to the {props.canvas_title} canvas
-                                </p>
-                            </div>
-                        </div>
-                    </Row>
-                    <Row>
-                        <div className="col-md-6 justify-content-end d-flex">
                             <textarea onChange={event => setMessage(event.target.value)} name="message" placeholder="message"/>
                         </div>
                         <div className="col-md-6 justify-content-start d-flex">
@@ -78,6 +80,26 @@ function DivForm(props) {
                             </div>
                         </div>
                     </Row>
+                    <Row>
+                        <div className="col-md-6 justify-content-end d-flex">
+                            <input onChange={event => setDonation(event.target.value)} name="donation" placeholder="donation"/>
+                        </div>
+                        <div className="col-md-6 justify-content-start d-flex">
+                            <div className="formHelp">
+                                <h4>
+                                    donation
+                                </h4>
+                                <p>
+                                    Contribute to the {props.canvas_title} canvas
+                                </p>
+                            </div>
+                        </div>
+                    </Row>
+                    <FlexRow>
+                        <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" >
+                            <Checkout />
+                        </StripeProvider>
+                    </FlexRow>
                     <FlexRow>
                         <SubmitButton>create div</SubmitButton>
                     </FlexRow>

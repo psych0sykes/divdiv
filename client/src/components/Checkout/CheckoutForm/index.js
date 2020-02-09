@@ -1,6 +1,7 @@
 import React from 'react';
 import {injectStripe} from 'react-stripe-elements';
 import CardSection from '../CardSection';
+import {FlexRow} from "../../Grid";
 import API from "../../../utils/API";
 
 class CheckoutForm extends React.Component {
@@ -10,25 +11,12 @@ class CheckoutForm extends React.Component {
     published: ""
   }
 
-  // fetch("/create-payment-intent", {
-  //   method: "POST",
-  //   body: JSON.stringify(orderData)
-  // })
-  //   .then(function(result) {
-  //     return result.json();
-  //   })
-  //   .then(function(data) {
-  //     return setupElements(data);
-  //   })
-
   intent = () => API.createPaymentIntent({})
                   .then((data) => {
                     this.setState({
                       published: data.data.clientSecret
                     })
                   });
-
-
 
   handleSubmit = async (ev) => {
     // We don't want to let default form submission happen here, which would refresh the page.
@@ -49,8 +37,12 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <CardSection />
-        <button>Confirm order</button>
+        <FlexRow>
+          <CardSection />
+        </FlexRow>
+        <FlexRow>
+          <button>Confirm order</button>
+        </FlexRow>
       </form>
     );
   }
