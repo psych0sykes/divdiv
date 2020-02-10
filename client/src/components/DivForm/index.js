@@ -13,31 +13,10 @@ function DivForm(props) {
     const [color, setColor] = useState("#ff0000");
     const [message, setMessage] = useState();
     const [donation, setDonation] = useState();
-    const [displayPicker, setDisplayPicker] = useState();
-
-    const handleFormSubmit = event => {
-        event.preventDefault();
-
-        console.log("submitting new div");
-          API.saveDiv({
-            rgb_color: color,
-            message: message,
-            username: props.username,
-            donation_amount: donation,
-            canvas_id: props.canvas_id,
-            canvas_title: props.canvas_title
-            })
-            .then( window.location.assign("/canvas/" + props.canvas_id))
-            .catch(err => console.log(err))
-        };
-
-    const showPicker = () => {
-
-    }
 
     return(
         <Container>
-            <form onSubmit={handleFormSubmit}>
+            <form>
                     <Row>
                         <div className="col-md-6 justify-content-end d-flex">
                             <div>
@@ -81,6 +60,16 @@ function DivForm(props) {
                         </div>
                     </Row>
             </form>
+            <FlexRow>
+                    <Checkout divForm={{
+            rgb_color: color,
+            message: message,
+            username: props.username,
+            donation_amount: donation,
+            canvas_id: props.canvas_id,
+            canvas_title: props.canvas_title
+            }}/>
+            </FlexRow>
         </Container>
     );
 }

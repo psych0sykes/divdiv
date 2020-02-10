@@ -8,11 +8,17 @@ class CheckoutForm extends React.Component {
 
   state = {
     published: "",
-    donation: 0
+    donation: 0,
+    divForm: this.props.divForm,
+    username: ""
   }
 
   componentDidMount() {
-    console.log(this.props.username)
+      API.loggedIn()
+      .then((res) => {
+        console.log(res.data.username)
+        this.setState({username: res.data.username})})
+      .catch((err) => console.log(err));
   }
 
   intent = () => API.createPaymentIntent({amount: this.state.donation})
@@ -22,24 +28,41 @@ class CheckoutForm extends React.Component {
                     })
                   });
 
+  saveDiv = () => {API.saveDiv({
+    rgb_color: this.state.divForm.rgb_color,
+    message: this.state.divForm.message,
+    username: this.state.username,
+    donation_amount: this.state.donation,
+    canvas_id: this.state.divForm.canvas_id,
+    canvas_title: this.state.divForm.canvas_title
+    }) 
+    .then(console.log("done")
+      // window.location.assign("/canvas/" + this.state.divForm.canvas_id)
+      )
+    .catch(err => console.log(err))}
+
   handleSubmit = (event) => {
-    // We don't want to let default form submission happen here, which would refresh the page.
     event.preventDefault();
     this.intent().then(() => {
       console.log("payment")
+
+      // PUT UP A LOADING ICON HERE
+
     // See our confirmCardPayment documentation for more:
     // https://stripe.com/docs/stripe-js/reference#stripe-confirm-card-payment
     this.props.stripe.confirmCardPayment(this.state.published, {
       payment_method: {
         card: this.props.elements.getElement('card'),
         billing_details: {
-          name: 'Jenny Rosen',
+          name: this.state.username,
         },
       }
-    }).then((res) => { res.error ? console.log("bad") : console.log("good")
-    })
-  })
-  };
+    }).then((res) => { 
+      if(res.error)
+      {console.log("bad")}
+      else{this.saveDiv()}
+      })
+  })};
 
   render() {
     return (
