@@ -9,6 +9,7 @@ import CanvasView from "./pages/CanvasView";
 import DivView from "./pages/DivView";
 import DivCreate from "./pages/DivCreate";
 import CanvasBrowse from "./pages/CanvasBrowse";
+import Build from "./pages/Build";
 import {StripeProvider} from 'react-stripe-elements';
 import API from "./utils/API";
 
@@ -53,6 +54,7 @@ class App extends Component {
           <Route exact path="/user/account" component={this.state.status ? YourDivDiv : SignUp}/>
           <Route exact path="/canvas/:id" component={CanvasView}/>
           <Route exact path="/div/:id" component={DivView}/>
+          <Route exact path="/build" component={Build}/>
           </Switch>
           {/* <button onClick={() => this.status()} style={{backgroundColor: "black", color: "white"}}>status</button>
           <button onClick={() => this.logout()} style={{backgroundColor: "black", color: "white"}}>log out</button> */}

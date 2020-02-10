@@ -19,7 +19,10 @@ function CanvasForm(props) {
             bio: bio,
             canvas_id: "test"
             })
-            .then()
+            .then((res) => {
+                console.log(res.data);
+                window.location.assign("/canvas/" + res.data._id)
+            })
             .catch(err => console.log(err))
         };
 
