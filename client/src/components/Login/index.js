@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Row, Container, Col, FlexRow} from "../Grid";
+import {Row, Container, FlexRow} from "../Grid";
 import {SubmitButton} from "../Form";
 import API from "../../utils/API";
 import "./style.css";

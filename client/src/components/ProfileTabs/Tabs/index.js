@@ -11,7 +11,7 @@ export function Divs(props) {
 return (
     <div>
         <FlexRow>  
-            <CanvasDivsByUser width="300px" div="50px" click={true}/>
+            <CanvasDivsByUser width="300px" div="75px" click={true}/>
         </FlexRow>
     </div>
 )

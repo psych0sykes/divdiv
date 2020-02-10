@@ -3,7 +3,6 @@ import { Row, Container, FlexRow } from "../components/Grid";
 import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
 import Checkout from "../components/Checkout";
-import DivForm from "../components/DivForm";
 import API from "../utils/API";
 
 

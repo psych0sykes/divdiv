@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { CompactPicker } from 'react-color';
-import {Row, Container, FlexRow, Col} from "../Grid";
+import {Row, Container, FlexRow} from "../Grid";
 import {Spacer} from "../Section";
-import {SubmitButton} from "../Form";
-import {StripeProvider} from 'react-stripe-elements';
 import Checkout from "../Checkout";
-import API from "../../utils/API";
 import "./style.css";
 
 function DivForm(props) {

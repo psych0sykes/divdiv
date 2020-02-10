@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import _Div from "../_Div";
+import DivDiv from "../DivDiv";
 import "./style.css";
 
 function Canvas(props) {
@@ -8,7 +8,6 @@ function Canvas(props) {
     const canvasId = props.canvasId;
     const divStyle = {width: props.divSize, height: props.divSize, backgroundColor: "gray"}
     const [canvasDivs,setCanvasDivs] = useState(<div></div>);
-    const [donation, setDonation] = useState(0);
 
     const styles = {
         width: "100%",
@@ -24,11 +23,11 @@ function Canvas(props) {
     }
 
     function populateCanvas(a){
-        console.log("populating canvas")
+        // console.log("populating canvas")
         return  a.map((newDiv) => 
         <div key={newDiv._id} onClick={() => divDirect(newDiv._id)}>
             <div className={props.click ? "clickDiv" : ""}>
-                <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</_Div>
+                <DivDiv Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</DivDiv>
             </div>
         </div>)
     };
@@ -44,8 +43,8 @@ function Canvas(props) {
                 donations = amount + donations;
                 // console.log(result.data)
             };
-            props.supportTotal ? props.supportTotal(result.data.length) : console.log("=");
-            props.donationTotal ? props.donationTotal(donations) : console.log("=");
+            props.supportTotal ? props.supportTotal(result.data.length) : console.log("===");
+            props.donationTotal ? props.donationTotal(donations) : (console.log("==="));
         }
         fetchData();
       }, []);

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function _Div(props) {
+function DivDiv(props) {
 
     const divStyle =
         {  
@@ -14,4 +14,4 @@ function _Div(props) {
     <div style={divStyle}></div>)
 };
 
-export default _Div;
+export default DivDiv;

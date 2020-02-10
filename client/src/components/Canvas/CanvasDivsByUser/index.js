@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../../utils/API";
-import _Div from "../../_Div";
+import DivDiv from "../../DivDiv";
 import "../style.css";
 
 function CanvasDivsByUser(props) {
@@ -19,13 +19,13 @@ function CanvasDivsByUser(props) {
         return  a.map((newDiv) => 
         <div key={newDiv._id} onClick={() => divDirect(newDiv._id)}>
             <div className={props.click ? "clickDiv" : ""}>
-                <_Div Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</_Div>
+                <DivDiv Key={newDiv._id} RgbColor={newDiv.rgb_color} divStyle={divStyle}>{newDiv.username}</DivDiv>
             </div>
         </div>
     )};
 
     function divDirect(id) {
-        console.log(id)
+        // console.log(id)
         if(props.click){
             window.location.assign("/div/" + id)
         }
@@ -33,15 +33,15 @@ function CanvasDivsByUser(props) {
 
     useEffect(() => {
         const fetchData = async (id) => {
-            console.log(id);
+            // console.log(id);
             const result = await API.getCanvasDivsByUser(id).catch(err => console.log(err));
-            console.log(result.data)
+            // console.log(result.data)
             setCanvasDivs(populateCanvas(result.data));  
         }
         const status = async () => {
             const result = await API.loggedIn()
             .then((res) => {
-              console.log(res.data.username)
+            //   console.log(res.data.username)
               fetchData(res.data.username)})
             .catch((err) => console.log(err));
         }

@@ -6,7 +6,7 @@ function Icon(props) {
 const fullSize = props.size + "px";
 const halfSize = (parseFloat(props.size) / 2).toString() + "px";
 const [colorArray,setColorArray] = useState(["black","black","black","black"])
-let colors = props.colors ? props.colors : ["orangered","black","blue","yellow","orange","red"]
+const colors = props.colors ? props.colors : ["orangered","black","blue","yellow","orange","red"]
 
 // condition ? exprIfTrue : exprIfFalse
 

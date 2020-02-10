@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Row, Container, FlexRow } from "../components/Grid";
+import {Container, FlexRow } from "../components/Grid";
 import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
-import _Div from "../components/_Div";
+import DivDiv from "../components/DivDiv";
 import API from "../utils/API";
 
 
@@ -68,7 +68,7 @@ class DivView extends Component {
                 </FlexRow>
                 <FlexRow wrap="noWrap">
                     <div className="col-md-6 justify-content-end d-flex">
-                        <_Div RgbColor={this.state.rgb_color} divStyle={{width: "175px", height: "175px"}}/>
+                        <DivDiv RgbColor={this.state.rgb_color} divStyle={{width: "175px", height: "175px"}}/>
                     </div>
                     <div className="col-md-6 justify-content-start d-flex">
                         <table>

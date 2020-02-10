@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Container, FlexRow } from "../components/Grid";
+import { Row, Container} from "../components/Grid";
 import TopCanvas from "../components/TopCanvas";
 import API from "../utils/API";
 

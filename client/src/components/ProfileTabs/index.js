@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {Row, Container, Col, FlexRow} from "../Grid";
+import React, { useState } from "react";
+import {FlexRow} from "../Grid";
 import {Divs, Canvases, Account} from "./Tabs";
 import "./style.css";
 

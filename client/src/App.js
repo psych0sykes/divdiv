@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("process.env")
     return (
       <Router>
       <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}>
