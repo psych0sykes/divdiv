@@ -12,6 +12,8 @@ import CanvasBrowse from "./pages/CanvasBrowse";
 import {StripeProvider} from 'react-stripe-elements';
 import API from "./utils/API";
 
+require('dotenv').config()
+
 class App extends Component {
 
   state = {
@@ -37,9 +39,10 @@ class App extends Component {
   }
 
   render() {
+    console.log("process.env")
     return (
       <Router>
-      <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" >
+      <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}>
         <div>
           <Nav status={this.state.status} loggedIn={this.status} displayLogin={this.state.displayLogin} setDisplayLogin={this.setDisplayLogin}/>
           <Switch>

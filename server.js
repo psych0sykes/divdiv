@@ -9,7 +9,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const db = require("./models");
-
+require('dotenv').config()
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -24,8 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const stripe = require('stripe')("sk_test_0tS3rAobuOiAbun1KCzvcpG800z4PZg751");
-const endpointSecret = process.env.STRIPE_WEBHOOK_SIGNATURE;
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.post('/api/webhook', bodyParser.raw({type: 'application/json'}), (request, response) => {
   let event;
@@ -70,7 +69,6 @@ app.post("/api/donate", async (req, res) => {
 
   // Send publishable key and PaymentIntent details to client
   res.send({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     clientSecret: paymentIntent.client_secret
   });
 });
