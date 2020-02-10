@@ -1,10 +1,12 @@
 import React from 'react';
 import {injectStripe} from 'react-stripe-elements';
-import { CompactPicker } from 'react-color';
+import {CompactPicker } from 'react-color';
 import CardSection from '../CardSection';
 import {Row, FlexRow, Container} from "../../Grid";
 import {Spacer} from "../../Section";
 import API from "../../../utils/API";
+import "./style.css"
+import IconLoading from '../../Icon/IconLoading';
 
 class CheckoutForm extends React.Component {
 
@@ -14,7 +16,8 @@ class CheckoutForm extends React.Component {
     username: "",
     color: "#ff0000",
     canvas_id: this.props.canvas_id,
-    canvas_title: this.props.canvas_title
+    canvas_title: this.props.canvas_title,
+    loading: false,
   }
 
   componentDidMount() {
@@ -26,7 +29,7 @@ class CheckoutForm extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  intent = () => API.createPaymentIntent({amount: this.state.donation})
+  intent = () => API.createPaymentIntent({amount: (this.state.donation * 100)})
                   .then((data) => {
                     this.setState({
                       published: data.data.clientSecret
@@ -49,7 +52,7 @@ class CheckoutForm extends React.Component {
     this.intent().then(() => {
       console.log("payment")
 
-      // PUT UP A LOADING ICON HERE
+      this.setState({loading: true})
 
     // See our confirmCardPayment documentation for more:
     // https://stripe.com/docs/stripe-js/reference#stripe-confirm-card-payment
@@ -62,10 +65,12 @@ class CheckoutForm extends React.Component {
       }
     }).then((res) => { 
       if(res.error)
-      {console.log("bad")}
+      {console.log("bad")
+      this.setState({loading: false})}
       else{
         console.log("good")
         this.saveDiv()}
+        this.setState({loading: false})
       })
   })};
 
@@ -82,7 +87,10 @@ class CheckoutForm extends React.Component {
                       <Spacer space="20px"/>
                       <Row>
                           <div>
-                            <CompactPicker className="colorPicker" color={this.state.color} onChangeComplete={newColor => this.setState({color: newColor.hex})}/>
+                            <CompactPicker className="colorPicker" color={this.state.color} onChangeComplete={(newColor) => {
+                              this.setState({color: newColor.hex})
+                              console.log(this.state.color)
+                              }} />
                           </div>
                       </Row>
                       </div>
@@ -138,6 +146,10 @@ class CheckoutForm extends React.Component {
           <button>Confirm ${this.state.donation} donation</button>
         </FlexRow>
       </form>
+      <FlexRow>
+        <IconLoading size="40px" display={this.state.loading}/>
+      </FlexRow>
+      <Spacer space="100px"/>
     </Container>
     );
   }

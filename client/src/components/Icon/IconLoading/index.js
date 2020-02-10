@@ -43,7 +43,7 @@ useEffect(() => {
   ];
 
   return (
-    <div>
+    <div style={{display: props.display ? "block" : "none"}}>
         <div className="divIconLoading">
             <div className="insertIcon1" style={style[1]}></div>
             <div className="insertIcon2" style={style[2]}></div>
