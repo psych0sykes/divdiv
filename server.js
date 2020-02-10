@@ -58,12 +58,13 @@ app.post('/api/webhook', bodyParser.raw({type: 'application/json'}), (request, r
   response.json({received: true});
 });
 
-app.post("/api/create-payment-intent", async (req, res) => {
+app.post("/api/donate", async (req, res) => {
   console.log("create payment intent is working...")
-  // const { items, currency } = req.body;
+  const amount = req.body.amount;
+  console.log("Submitting Payment of $" + amount)
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 100,
+    amount: amount,
     currency: "usd"
   });
 

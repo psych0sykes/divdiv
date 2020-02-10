@@ -7,7 +7,7 @@ class Checkout extends React.Component {
   render() {
     return (
       <Elements>
-        <InjectedCheckoutForm />
+        <InjectedCheckoutForm/>
       </Elements>
     );
   }

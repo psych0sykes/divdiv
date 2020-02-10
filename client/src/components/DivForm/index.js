@@ -80,30 +80,7 @@ function DivForm(props) {
                             </div>
                         </div>
                     </Row>
-                    <Row>
-                        <div className="col-md-6 justify-content-end d-flex">
-                            <input onChange={event => setDonation(event.target.value)} name="donation" placeholder="donation"/>
-                        </div>
-                        <div className="col-md-6 justify-content-start d-flex">
-                            <div className="formHelp">
-                                <h4>
-                                    donation
-                                </h4>
-                                <p>
-                                    Contribute to the {props.canvas_title} canvas
-                                </p>
-                            </div>
-                        </div>
-                    </Row>
-                    <FlexRow>
-                        <SubmitButton>create div</SubmitButton>
-                    </FlexRow>
             </form>
-                    <FlexRow>
-                        {/* <StripeProvider apiKey="pk_test_G0eoakryQbFM30QytnXchzDZ006lluffuY" > */}
-                            <Checkout />
-                        {/* </StripeProvider> */}
-                    </FlexRow>
         </Container>
     );
 }

@@ -54,7 +54,6 @@ export default {
     return axios.get("/api/user/in");
   },
   createPaymentIntent: function(req) {
-    return axios.post("/api/create-payment-intent");
+    return axios.post("/api/donate", req);
   }
-
 };

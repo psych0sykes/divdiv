@@ -26,7 +26,7 @@ class App extends Component {
   status = () => {
     API.loggedIn()
     .then((res) => {
-      console.log(res.data.username)
+      // console.log(res.data.username)
       this.setState({status: true})})
     .catch((err) => {
       this.setState({status: false})})
