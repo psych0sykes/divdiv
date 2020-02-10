@@ -44,13 +44,13 @@ useEffect(() => {
 
   return (
     <div>
-        <div className="insertIcon" style={style[4]}></div>
-        <div className="divIconThree">
-            <div style={style[1]}></div>
+        <div className="divIconLoading">
+            <div className="insertIcon1" style={style[1]}></div>
+            <div className="insertIcon2" style={style[2]}></div>
         </div>
-        <div className="divIconThree" style={style[0]}>
-            <div style={style[2]}></div>
-            <div style={style[3]}></div>
+        <div className="divIconLoading">
+            <div className="insertIcon3" style={style[3]}></div>
+            <div className="insertIcon4" style={style[4]}></div>
         </div>
     </div>
   )

@@ -1,33 +1,108 @@
-.divIconThree {
+.divIconLoading {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 }
-.insertIcon {
+.insertIcon1 {
     position: relative;
-    animation: moveIcon 2s ease-in-out infinite ;
+    animation: moveIcon1 1.5s ease-in-out infinite ;
+}
+.insertIcon2 {
+    position: relative;
+    animation: moveIcon2 1.5s ease-in-out infinite ;
+}
+.insertIcon3 {
+    position: relative;
+    animation: moveIcon3 1.5s ease-in-out infinite ;
+}
+.insertIcon4 {
+    position: relative;
+    animation: moveIcon4 1.5s ease-in-out infinite ;
 }
 
-@keyframes moveIcon {
+@keyframes moveIcon1 {
     0% {    opacity: 0;
-            left: 90px;
+            right: 0px;
+            bottom: 30px;
+            top: -60px;
+        }
+
+    10% {   opacity: 1;
+            right: 0px;
+            bottom: 30px;
+            top: -60px;
+        }
+    90% {   opacity: 1;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+    100%{   opacity: 0;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+
+        }
+}
+@keyframes moveIcon2 {
+    0% {    opacity: 0;
+            left: 60px;
             bottom: 30px;
             top: 0px;
         }
 
     10% {   opacity: 1;
-            left: 90px;
+            left: 60px;
             bottom: 30px;
             top: 0px;
         }
     90% {   opacity: 1;
-            left: 30px;
-            top: 30px;
+            left: 0px;
+            top: 0px;
             bottom: 0px;
         }
     100%{   opacity: 0;
-            left: 30px;
-            top: 30px;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+
+        }
+}
+@keyframes moveIcon3 {
+    0% {    opacity: 0;
+            transform: rotate(0deg);
+        }
+
+    50% {   opacity: 1;
+            transform: rotate(360deg);
+        }
+    90% {   opacity: 1;
+            transform: rotate(360deg);
+        }
+    100%{   opacity: 0;
+            transform: rotate(360deg);
+        }
+}
+@keyframes moveIcon4 {
+    0% {    opacity: 0;
+            right: 90px;
+            bottom: 30px;
+            top: 0px;
+        }
+
+    10% {   opacity: 1;
+            right: 90px;
+            bottom: 30px;
+            top: 0px;
+        }
+    90% {   opacity: 1;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+    100%{   opacity: 0;
+            right: 0px;
+            top: 0px;
             bottom: 0px;
 
         }
