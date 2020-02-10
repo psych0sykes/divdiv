@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {Row, Container, Col} from "../../Grid";
 import API from "../../../utils/API";
 import _Div from "../../_Div";
 import "../style.css";
-import { Collection } from "mongoose";
 
 function CanvasDivsByUser(props) {
 

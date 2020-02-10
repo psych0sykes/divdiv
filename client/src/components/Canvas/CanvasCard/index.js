@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {Row, Container, Col} from "../../Grid";
-import API from "../../../utils/API";
+import React from "react";
+import {Row, Container} from "../../Grid";
 import Canvas from "../../Canvas";
 import "./style.css";
 

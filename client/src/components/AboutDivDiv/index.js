@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {Row, Container, Col, FlexRow} from "../Grid";
+import React from "react";
+import {Container, FlexRow} from "../Grid";
 import {CenterItem, Slogan, Spacer} from "../Section";
-import Icon from "../Icon";
 import IconThree from "../Icon/IconThree";
 import IconSpin from "../Icon/IconSpin";
-import API from "../../utils/API";
 import "./style.css";
 
 function AboutDivDiv(props) {
