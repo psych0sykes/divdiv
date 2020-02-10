@@ -10,7 +10,7 @@ router.route("/canvas/user/:id")
 router.route("/find/id/:id")
   .get(divControllers.findDivById)
 
-router.route("/create/:canvas_title/:id")
+router.route("/create/")
   .post(divControllers.newDiv)
 
 router.route("/")

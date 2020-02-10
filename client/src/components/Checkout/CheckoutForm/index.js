@@ -1,7 +1,9 @@
 import React from 'react';
 import {injectStripe} from 'react-stripe-elements';
+import { CompactPicker } from 'react-color';
 import CardSection from '../CardSection';
-import {Row, FlexRow} from "../../Grid";
+import {Row, FlexRow, Container} from "../../Grid";
+import {Spacer} from "../../Section";
 import API from "../../../utils/API";
 
 class CheckoutForm extends React.Component {
@@ -9,11 +11,14 @@ class CheckoutForm extends React.Component {
   state = {
     published: "",
     donation: 0,
-    divForm: this.props.divForm,
-    username: ""
+    username: "",
+    color: "#ff0000",
+    canvas_id: this.props.canvas_id,
+    canvas_title: this.props.canvas_title
   }
 
   componentDidMount() {
+      console.log(this.state)
       API.loggedIn()
       .then((res) => {
         console.log(res.data.username)
@@ -29,16 +34,14 @@ class CheckoutForm extends React.Component {
                   });
 
   saveDiv = () => {API.saveDiv({
-    rgb_color: this.state.divForm.rgb_color,
-    message: this.state.divForm.message,
+    rgb_color: this.state.color,
+    message: this.state.message,
     username: this.state.username,
     donation_amount: this.state.donation,
-    canvas_id: this.state.divForm.canvas_id,
-    canvas_title: this.state.divForm.canvas_title
+    canvas_id: this.state.canvas_id,
+    canvas_title: this.state.canvas_title
     }) 
-    .then(console.log("done")
-      // window.location.assign("/canvas/" + this.state.divForm.canvas_id)
-      )
+    .then(window.location.assign("/canvas/" + this.state.canvas_id))
     .catch(err => console.log(err))}
 
   handleSubmit = (event) => {
@@ -60,29 +63,74 @@ class CheckoutForm extends React.Component {
     }).then((res) => { 
       if(res.error)
       {console.log("bad")}
-      else{this.saveDiv()}
+      else{
+        console.log("good")
+        this.saveDiv()}
       })
   })};
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Row>
-                        <div className="col-md-6 justify-content-end d-flex">
-                            <div>$</div>
-                            <input style={{width: "125px"}} onChange={event => this.setState({donation: event.target.value})} name="donation" placeholder="donation"/>
-                        </div>
-                        <div className="col-md-6 justify-content-start d-flex">
-                            <div className="formHelp">
-                                <h4>
-                                    donation
-                                </h4>
-                                <p>
-                                    How much would you like to donate?
-                                </p>
-                            </div>
-                        </div>
-                    </Row>
+      <Container>
+            <form onSubmit={this.handleSubmit}>
+              <Row>
+                  <div className="col-md-6 justify-content-end d-flex">
+                      <div>
+                      <Row>
+                          <input value={this.state.color} onChange={event => this.setState({color: event.target.value})}/>
+                      </Row>
+                      <Spacer space="20px"/>
+                      <Row>
+                          <div>
+                            <CompactPicker className="colorPicker" color={this.state.color} onChangeComplete={newColor => this.setState({color: newColor.hex})}/>
+                          </div>
+                      </Row>
+                      </div>
+                  </div>
+                  <div className="col-md-6 justify-content-start d-flex">
+                      <div className="formHelp">
+                          <h4>
+                              div color
+                          </h4>
+                          <p>
+                              Pick your color
+                          </p>
+                      </div>
+                      <div className="checkTheDiv" style={{backgroundColor: this.state.color}}/>
+                  </div>
+              </Row>
+              <Spacer space="20px"/>
+              <Row>
+                  <div className="col-md-6 justify-content-end d-flex">
+                      <textarea onChange={event => this.setState({message: event.target.value})} name="message" placeholder="message"/>
+                  </div>
+                  <div className="col-md-6 justify-content-start d-flex">
+                      <div className="formHelp">
+                          <h4>
+                              message
+                          </h4>
+                          <p>
+                              Give your div a message
+                          </p>
+                      </div>
+                  </div>
+              </Row>
+              <Row>
+                  <div className="col-md-6 justify-content-end d-flex">
+                      <div>$</div>
+                      <input style={{width: "125px"}} onChange={event => this.setState({donation: event.target.value})} name="donation" placeholder="donation"/>
+                  </div>
+                  <div className="col-md-6 justify-content-start d-flex">
+                      <div className="formHelp">
+                            <h4>
+                              donation
+                          </h4>
+                          <p>
+                            How much would you like to donate?
+                          </p>
+                      </div>
+                  </div>
+              </Row>
         <FlexRow>
           <CardSection />
         </FlexRow>
@@ -90,6 +138,7 @@ class CheckoutForm extends React.Component {
           <button>Confirm ${this.state.donation} donation</button>
         </FlexRow>
       </form>
+    </Container>
     );
   }
 }

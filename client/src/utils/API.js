@@ -32,7 +32,7 @@ export default {
   },
   saveDiv: function(divObj) {
     // console.log(divObj)
-    return axios.post("/api/divs/create/:canvas_title/:id", divObj);
+    return axios.post("/api/divs/create/", divObj);
   },
   saveCanvas: function(canvObj) {
     // console.log(canvObj)

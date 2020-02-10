@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Container, FlexRow } from "../components/Grid";
 import {Slogan} from "../components/Section";
 import Icon from "../components/Icon";
+import Checkout from "../components/Checkout";
 import DivForm from "../components/DivForm";
 import API from "../utils/API";
 
@@ -35,7 +36,7 @@ class CanvasCreate extends Component {
                         <Icon size="25"/>
                     </FlexRow>
                     <Row>
-                        <DivForm username={this.state.username} canvas_id={this.props.match.params.id} canvas_title={this.props.match.params.canvas_title}/>
+                        <Checkout canvas_id={this.props.match.params.id} canvas_title={this.props.match.params.canvas_title}/>
                     </Row>
                 </Container>
             </div>
