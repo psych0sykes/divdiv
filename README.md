@@ -1,6 +1,6 @@
 # dividv
 ### Visual Fundraising Platform
-Built with React, Node, and a Mongo database; hosted on Heroku, payment processing by Stripe.
+Built with React, Node, and a Mongo database; hosted on Heroku, payment processing by Stripe, user authenication by Passport.
 
 **divdiv is not processing live payments currently and is in development see "Payments" below**
 
