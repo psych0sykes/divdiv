@@ -12,7 +12,7 @@ class Home extends Component {
 
         const topCanvases = [
             {_id: "5e362edd02a34659ea1dc487",
-            canvas_title: "Bread Mods - Modular Synthesis",
+            canvas_title: "Helping Hand",
             },
             {_id: "5e362edd02a34659ea1dc488",
             canvas_title: "Save Walter White"},
