@@ -1,4 +1,4 @@
-# dividv
+# [dividv](https://stark-inlet-81881.herokuapp.com/)
 ### Visual Fundraising Platform
 Built with React, Node, and a Mongo database; hosted on Heroku, payment processing by Stripe, user authenication by Passport.
 
