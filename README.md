@@ -1,6 +1,7 @@
 # dividv
 ### Visual Fundraising Platform
 Built with React, Node, and a Mongo database; hosted on Heroku, payment processing by Stripe.
+
 **divdiv is not processing live payments currently and is in development see "Payments" below**
 
 ### Live dividv?
