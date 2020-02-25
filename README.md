@@ -1,11 +1,11 @@
-# [dividv](https://stark-inlet-81881.herokuapp.com/)
+# [dividv](https://divdiv.herokuapp.com/)
 ### Visual Fundraising Platform
 Built with React, Node, and a Mongo database; hosted on Heroku, payment processing by Stripe, user authenication by Passport.
 
 **divdiv is not processing live payments currently and is in development see [Payments?](https://github.com/psych0sykes/divdiv/blob/master/README.md#payments) below**
 
 ### Live dividv?
-Divdiv is still in development. While it is functional, the payment processing is configured in test mode for the current deployment. If you would like to start a fundraising campaign in divdiv and get some real payments, contribute a div or two to the [divdiv Live](https://stark-inlet-81881.herokuapp.com/canvas/5e42fa91e37841002acec6d6) canvas.
+Divdiv is still in development. While it is functional, the payment processing is configured in test mode for the current deployment. If you would like to start a fundraising campaign in divdiv and get some real payments, contribute a div or two to the [divdiv Live](https://divdiv.herokuapp.com/canvas/5e42fa91e37841002acec6d6) canvas.
 
 ## What is divdiv?
 Divdiv is a fundraising platform built around divs and canvases. To start a fundraising campaign, a user can create a canvas. Each donation the campaign receives adds a div to the campaign canvas. As more users donate to a campaign, the canvas will fill with color.
