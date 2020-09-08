@@ -39,6 +39,8 @@ class App extends Component {
     this.state.displayLogin === "none" ? this.setState({displayLogin: "block"}) : this.setState({displayLogin: "none"});
   }
 
+  // process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+
   render() {
     return (
       <Router>

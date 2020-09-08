@@ -2,8 +2,20 @@ const db = require("../models");
 
 module.exports = {
     newUser: function (req, res) {
+
+    const u = req.body;
+
+    const createUser = {
+        username: u.username,
+        email: u.email,
+        first_name: u.first_name,
+        last_name: u.last_name,
+        created: u.created,
+        password: db.User.generateHash(u.password)
+    };
+
     db.User
-        .create(req.body)
+        .create(createUser)
         .then(newUser => res.json(newUser))
         .catch(err => res.status(422).json(err));
 
@@ -19,22 +31,12 @@ module.exports = {
                     last_name: user.last_name,
                     created: user.created,
                 };
-                
+
                 return res.json(resUser)
             })
             .catch(err => res.status(422).json(err));
     }
 }
-
-// const userSchema = new Schema({
-//     username: {type: String, required: true},
-//     password: {type: String, required: true},
-//     email: {type: String, required: true},
-//     first_name: {type: String},
-//     last_name: {type: String},
-//     created: { type: Date, default: Date.now }
-  
-//   });
 
 
 
